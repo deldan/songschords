@@ -4,6 +4,7 @@ app/tmp/sessions/*
 app/tmp/tests/*
 # OS generated files #
 ######################
+.profile
 .DS_Store*
 ehthumbs.db
 Icon?
