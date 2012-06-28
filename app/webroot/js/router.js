@@ -11,9 +11,7 @@ window.SongsRouter = Backbone.Router.extend({
   },
 
   all: function () {
-    allHandler();
-    userVoice();
-    liveChat();
+
   },
 
   home: function () {
@@ -30,7 +28,7 @@ window.navigateTo = function (route) {
 };
 
 $(function () {
-  window.Router = new MachopackRouter();
+  window.Router = new SongsRouter();
   Backbone.history.start({ silent: true });
   Backbone.history.loadUrl(window.location.pathname.replace(/^\//, ''));
 });

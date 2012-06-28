@@ -76,7 +76,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => 'root',
-		'database' => 'test_songs',
+		'database' => 'songs_test',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

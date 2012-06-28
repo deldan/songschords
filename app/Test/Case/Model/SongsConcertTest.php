@@ -34,4 +34,7 @@ class SongsConcertTestCase extends CakeTestCase {
 		parent::tearDown();
 	}
 
+	public function testSave() {
+	}
+
 }

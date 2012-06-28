@@ -34,4 +34,7 @@ class UsersGroupTestCase extends CakeTestCase {
 		parent::tearDown();
 	}
 
+	public function testSave() {
+	}
+
 }

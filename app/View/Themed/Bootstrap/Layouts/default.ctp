@@ -44,6 +44,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->script('libs/bootstrap.min');
 		echo $this->Html->script('bootstrap/application');
 		echo $this->Html->script('vendors/jquery-1.7.2.min');
+		echo $this->Html->script('vendors/underscore');
 		echo $this->Html->script('vendors/backbone');
 		echo $this->Html->script('router');
 		echo $this->fetch('script');
