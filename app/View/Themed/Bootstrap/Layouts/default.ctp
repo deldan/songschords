@@ -45,17 +45,19 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->script('bootstrap/application');
 		echo $this->Html->script('vendors/jquery-1.7.2.min');
 		echo $this->Html->script('vendors/underscore');
+		echo $this->Html->script('vendors/lowpro');
+		echo $this->Html->script('vendors/raphael');
+		echo $this->Html->script('vendors/jtab');
 		echo $this->Html->script('vendors/backbone');
 		echo $this->Html->script('router');
+		echo $this->Html->script('song');
 		echo $this->fetch('script');
 	?>
-
 </head>
 <body data-spy="scroll" data-target=".subnav" data-offset="50">
 
 	<header class="container">
 
-		<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
 
     </header> <!-- /container -->
 
@@ -64,18 +66,14 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->element('menu/top_menu'); ?>
-
-			<?php echo $this->fetch('content'); ?>
+			<div class="container">
+				<?php echo $this->fetch('content'); ?>
+			</div>
 		</div>
 	</div>
 
 	<footer class="container">
-		<?php echo $this->Html->link(
-				$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-				'http://www.cakephp.org/',
-				array('target' => '_blank', 'escape' => false)
-			);
-		?>
+songs 2012
 	</footer><!-- /container -->
 
 	<?php echo $this->element('sql_dump'); ?>

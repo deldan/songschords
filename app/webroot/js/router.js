@@ -15,7 +15,7 @@ window.SongsRouter = Backbone.Router.extend({
   },
 
   home: function () {
-
+    song();
   },
 
   song: function () {

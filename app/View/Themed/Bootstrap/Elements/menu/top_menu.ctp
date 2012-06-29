@@ -12,22 +12,22 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</a>
-			<a class="brand" target="_blank" href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+			<a class="brand" href="#" data-bitly-type="bitly_hover_card">Songs</a>
 			<div class="nav-collapse">
 				<ul class="nav">
-					<li <?php if($current_page=="index"){echo'class="active"';} ?>>
-						<?php echo $this->Html->link('Scaffolding', array('controller' => 'app', 'action' => 'index')); ?>
+					<li <?php if($current_page=="songs"){echo'class="active"';} ?>>
+						<?php echo $this->Html->link('Canciones', array('controller' => 'app', 'action' => 'songs')); ?>
 					</li>
-					<li <?php if($current_page=="base_css"){echo'class="active"';} ?>>
-						<?php echo $this->Html->link('Base CSS', array('controller' => 'app', 'action' => 'base_css')); ?>
+					<li <?php if($current_page=="register"){echo'class="active"';} ?>>
+						<?php echo $this->Html->link('Registrarse', array('controller' => 'app', 'action' => 'register')); ?>
 					</li>
-					<li <?php if($current_page=="components"){echo'class="active"';} ?>>
-						<?php echo $this->Html->link('Components', array('controller' => 'app', 'action' => 'components')); ?>
-					</li>
-					<li <?php if($current_page=="javascript"){echo'class="active"';} ?>>
-						<?php echo $this->Html->link('Javascript plugins', array('controller' => 'app', 'action' => 'javascript')); ?>
+					<li <?php if($current_page=="loguin"){echo'class="active"';} ?>>
+						<?php echo $this->Html->link('Loguearse', array('controller' => 'app', 'action' => 'loguin')); ?>
 					</li>
 				</ul>
+				<form class="navbar-search pull-left" action="">
+		            <input type="text" class="search-query span2" placeholder="Buscar canciones" x-webkit-speech="">
+		        </form>
 			</div>
 		</div>
 	</div>

@@ -4981,3 +4981,9 @@ a.badge:hover {
 .invisible {
   visibility: hidden;
 }
+pre, xmp, plaintext, listing {
+display: block;
+font-family: monospace;
+white-space: pre;
+margin: 1em 0px;
+}
