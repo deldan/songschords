@@ -1,0 +1,48 @@
+2012-06-26 17:02:39 Error: [MissingActionException] Action AppController::base_css() could not be found.
+#0 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/danelchalbzouririvas/Sites/songschords/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-06-26 17:02:41 Error: [MissingActionException] Action AppController::components() could not be found.
+#0 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/danelchalbzouririvas/Sites/songschords/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-06-26 17:02:42 Error: [MissingActionException] Action AppController::javascript() could not be found.
+#0 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/danelchalbzouririvas/Sites/songschords/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-06-26 17:02:45 Error: [MissingActionException] Action AppController::index() could not be found.
+#0 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/danelchalbzouririvas/Sites/songschords/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-06-26 17:02:48 Error: [MissingActionException] Action AppController::base_css() could not be found.
+#0 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/danelchalbzouririvas/Sites/songschords/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-06-26 17:02:52 Error: [MissingActionException] Action AppController::components() could not be found.
+#0 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/danelchalbzouririvas/Sites/songschords/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-06-26 17:02:53 Error: [MissingActionException] Action AppController::javascript() could not be found.
+#0 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/danelchalbzouririvas/Sites/songschords/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-06-26 23:50:34 Error: [MissingActionException] Action AppController::javascript() could not be found.
+#0 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/danelchalbzouririvas/Sites/songschords/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-06-29 12:37:38 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /Users/danelchalbzouririvas/Sites/songschords/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-02 12:45:29 Error: [MissingActionException] Action AppController::songs() could not be found.
+#0 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/danelchalbzouririvas/Sites/songschords/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/danelchalbzouririvas/Sites/songschords/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

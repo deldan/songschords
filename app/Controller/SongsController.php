@@ -15,7 +15,7 @@ class SongsController extends AppController {
  */
 	public function index() {
 		$this->Song->recursive = 0;
-		$this->set('songs', $this->paginate());
+		$this->set('songs', $this->paginate('Song'));
 	}
 
 /**

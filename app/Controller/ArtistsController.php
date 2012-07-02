@@ -15,7 +15,7 @@ class ArtistsController extends AppController {
  */
 	public function index() {
 		$this->Artist->recursive = 0;
-		$this->set('artists', $this->paginate());
+		$this->set('artists', $this->paginate('Artist'));
 	}
 
 /**

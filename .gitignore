@@ -1,7 +1,3 @@
-app/tmp/cache/*
-app/tmp/logs/*
-app/tmp/sessions/*
-app/tmp/tests/*
 # OS generated files #
 ######################
 .profile
