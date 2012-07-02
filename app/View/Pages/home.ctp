@@ -36,20 +36,20 @@
 	<div class="span9 columns">
 		<pre>
 			<a>A</a>                        <a>D</a>
-			En E vivir, Dios, Dios Eentras Dspiro
+			En mi vivir, Dios, Dios mientras respiro
 			<a>F#m</a>                   <a>E</a>
-			Cuando despierto, Dios cuando dorEdo
+			Cuando despierto, Dios cuando dormido
 			<a>A</a>                        <a>D</a>
-			En E descanso, Dios en E trabajo
+			En mi descanso, Dios en mi trabajo
 			<a>F#m</a>                   <a>E</a>
-			En E pensaEento, Dios en lo que hablo.
+			En mi pensaEento, Dios en lo que hablo.
 
 			<a>D</a>-<a>E</a>      	<a>F#m</a>-<a>E</a> (último <a>A</a>)
 			//Sé todo en mí,  sé todo en mí.//
 			<a>D</a>                 <a>E</a>                <a>F#m</a>
 			Cristo en mí, Cristo en mí, Cristo en mí, esperanza en gloria,
 			<a>D</a>-<a>E</a>           <a>F#m</a>-<a>E</a>
-			EDs todo Dios.
+			Eres todo Dios.
 			<a>D</a>                 <a>E</a>                <a>F#m</a>
 			Cristo en mí, Cristo en mí, Cristo en mí, esperanza en gloria,
 			<a>D</a>-<a>E</a>                 <a>F#m</a>-<a>E</a>
