@@ -18,30 +18,57 @@ window.song = function () {
 			allChords();
 	    });
 	}
+
 	var transposeChord = function (chord, amount) {
 		//var scale = ["Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"];
 		var scale = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
-		//return chord.replace(/[DoReMiFaSolLaSi]#?/g,
+		//return chord.replace(/[DoReMiFaSolLaSi]#?/gi,
 		return chord.replace(/[CDEFGAB]#?/g,
-		function(match) {
-			var i = (scale.indexOf(match) + amount) % scale.length;
-			return scale[ i < 0 ? i + scale.length : i ];
+			function(match) {
+				var i = (scale.indexOf(match) + amount) % scale.length;
+				return scale[ i < 0 ? i + scale.length : i ];
+			}
+		);
+	}
+
+	var favorite = function () {
+		$('#favorite').on('click', function (e) {
+			e.preventDefault();
+			if ($(this).children('i').hasClass('icon-star-empty')) {
+    			$('#favorite').children('i').removeClass('icon-star-empty');
+    			$('#favorite').children('i').addClass('icon-star');
+		  	} else {
+		    	$('#favorite').children('i').removeClass('icon-star');
+    			$('#favorite').children('i').addClass('icon-star-empty');
+		  	}
+
+			//$(this).children('i').toggleClass('icon-star-empty');
 		});
 	}
-	var allChords = function (){
+
+	var allChords = function () {
 		var arr = new Array();
 		var i = 0;
 		$('pre a').each(function () {
 			arr[i] = $(this).text();
 			i++;
 		});
-		arr = $.unique(arr);
+		sortAndUnique(arr);
         arr = arr.join(" ");
-        console.log(arr);
         jtab.render($('#jtab'), arr);
-        $("#jtab").html(arr.sort().join(","));
 	}
+
+	var sortAndUnique = function ( my_array ) {
+	    my_array.sort();
+	    for ( var i = 1; i < my_array.length; i++ ) {
+	        if ( my_array[i] === my_array[ i - 1 ] ) {
+	                    my_array.splice( i--, 1 );
+	        }
+	    }
+	    return my_array;
+	};
 
 	chordUpDown();
 	allChords();
+	favorite();
 };

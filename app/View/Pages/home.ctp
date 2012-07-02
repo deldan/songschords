@@ -25,8 +25,8 @@
 					  <i class="icon-download"></i>
 					  Descargar
 					</a>
-					<a href="#">
-					  <i class="icon-star"></i>
+					<a href="#" id="favorite">
+					  <i class="icon-star-empty"></i>
 					  Guardar como favorito
 					</a>
 				</li>
@@ -48,7 +48,7 @@
 			//Sé todo en mí,  sé todo en mí.//
 			<a>D</a>                 <a>E</a>                <a>F#m</a>
 			Cristo en mí, Cristo en mí, Cristo en mí, esperanza en gloria,
-			<a>D</a>-<a>E</a>           <a>F#m-E</a>
+			<a>D</a>-<a>E</a>           <a>F#m</a>-<a>E</a>
 			EDs todo Dios.
 			<a>D</a>                 <a>E</a>                <a>F#m</a>
 			Cristo en mí, Cristo en mí, Cristo en mí, esperanza en gloria,
