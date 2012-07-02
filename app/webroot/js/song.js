@@ -29,6 +29,8 @@ window.song = function () {
 				return scale[ i < 0 ? i + scale.length : i ];
 			}
 		);
+		//alert(transposeChord("Dm7/G", 2)); // gives "Em7/A"
+		//alert(transposeChord("Fmaj9#11", -23)); // gives "F#maj9#11"
 	}
 
 	var favorite = function () {
