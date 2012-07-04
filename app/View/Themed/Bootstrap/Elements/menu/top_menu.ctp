@@ -19,10 +19,10 @@
 						<?php echo $this->Html->link('Canciones', array('controller' => 'app', 'action' => 'songs')); ?>
 					</li>
 					<li <?php if($current_page=="register"){echo'class="active"';} ?>>
-						<?php echo $this->Html->link('Registrarse', array('controller' => 'app', 'action' => 'register')); ?>
+						<?php echo $this->Html->link('Registrarse', '/registro'); ?>
 					</li>
 					<li <?php if($current_page=="loguin"){echo'class="active"';} ?>>
-						<?php echo $this->Html->link('Loguearse', array('controller' => 'app', 'action' => 'loguin')); ?>
+						<?php echo $this->Html->link('Loguearse', '/login'); ?>
 					</li>
 				</ul>
 				<form class="navbar-search pull-left" action="">

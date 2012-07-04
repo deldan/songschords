@@ -7,7 +7,54 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
+	public function beforeFilter(){
+	    parent::beforeFilter();
+	    $allow = array('login' , 'register');
+	    if(Configure::read('debug') > 0) {
+	      $allow[] = 'admin_register';
+	    }
+	    $this->Auth->allow($allow);
+	    $this->Auth->autoRedirect = false;
+	  }
 
+/**
+ * Register method
+ *
+ * @return void
+ */
+	public function register() {
+		if ($this->request->is('post')) {
+			if($this->request->data['User']['service'] == 0){
+				$this->Session->setFlash('No a aceptado los términos de servicio','default', array(), 'error');
+				$this->redirect('/registro');
+		    }
+			if($this->request->data['User']['password'] != $this->request->data['User']['confirm_password']) {
+		        $this->Session->setFlash('las contraseñas no coinciden','default', array(), 'error');
+		        $this->redirect('/registro');
+		    }
+			$this->User->create();
+			if ($this->User->save($this->request->data)) {
+				$this->Session->setFlash(__('The user has been saved'),'default', array(), 'success');
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'default', array(),'error');
+			}
+		}
+		$groups = $this->User->Group->find('list');
+		$this->set(compact('groups'));
+	}
+
+	public function login() {
+		if($this->request->data) {
+			if($this->Auth->login()){
+				return $this->redirect('index');
+			} else {
+				$this->Session->setFlash('Email o contraseña incorrecta', 'default', array(),'warning');
+				$this->redirect('/login');
+			}
+	    }
+
+	}
 /**
  * index method
  *

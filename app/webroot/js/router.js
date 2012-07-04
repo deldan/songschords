@@ -6,6 +6,7 @@ window.SongsRouter = Backbone.Router.extend({
 
   routes: {
     "": "home",
+    "registro": "register",
     "song": "song",
     "song/:query": "song",
   },
@@ -19,6 +20,9 @@ window.SongsRouter = Backbone.Router.extend({
   },
 
   song: function () {
+  },
+
+  register: function () {
   }
 
 });

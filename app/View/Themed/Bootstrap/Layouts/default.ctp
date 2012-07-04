@@ -35,6 +35,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 		echo $this->Html->css('bootstrap.min');
 		echo $this->Html->css('bootstrap-responsive.min');
+		echo $this->Html->css('songs');
 		// docs.css is only for this exapmple, remove for app dev
 		echo $this->Html->css('docs');
 		echo $this->fetch('meta');
@@ -51,6 +52,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				'vendors/raphael',
 				'vendors/jtab',
 				'vendors/backbone',
+				'vendors/jquery.validate',
 				'router',
 				'song'
 		));
@@ -65,10 +67,12 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 	<div id="container">
 		<div id="content">
-			<?php echo $this->Session->flash(); ?>
-
 			<?php echo $this->element('menu/top_menu'); ?>
 			<div class="container">
+				<? echo $this->Session->flash('error', array('element' => 'error'));?>
+				<? echo $this->Session->flash('success', array('element' => 'success'));?>
+				<? echo $this->Session->flash('information', array('element' => 'information'));?>
+				<? echo $this->Session->flash('warning', array('element' => 'warning'));?>
 				<?php echo $this->fetch('content'); ?>
 			</div>
 		</div>
