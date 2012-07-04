@@ -7,6 +7,8 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
+	public $components = array('Password','Email');
+
 	public function beforeFilter(){
 	    parent::beforeFilter();
 	    $allow = array('login' , 'register');
@@ -25,7 +27,7 @@ class UsersController extends AppController {
 	public function register() {
 		if ($this->request->is('post')) {
 			if($this->request->data['User']['service'] == 0){
-				$this->Session->setFlash('No a aceptado los términos de servicio','default', array(), 'error');
+				$this->Session->setFlash('No ha aceptado los términos de servicio','default', array(), 'error');
 				$this->redirect('/registro');
 		    }
 			if($this->request->data['User']['password'] != $this->request->data['User']['confirm_password']) {
@@ -55,6 +57,23 @@ class UsersController extends AppController {
 	    }
 
 	}
+
+	public function resetUserPassword(){
+		if($this->request->data) {
+			$user = $this->User->find('first',array('conditions'=> array('User.email =' => $this->request->data['User']['email'])));
+			if(!empty($user)){
+				$newpass = $this->Password->generatePassword();
+				$this->User->id = $user['User']['id'];
+				if($this->User->saveField('password', $newpass)){
+				  $this->_sendPasswordMail($user,$newpass);
+				  $this->Session->setFlash(__('Tu Nueva contraseña a sido enviada a tu Email'), 'default', array(),'success');
+				}
+			} else {
+				$message = "Email invalido";
+				$this->Session->setFlash(__('Email invalido'), 'default', array(),'error');
+			}
+		}
+  }
 /**
  * index method
  *
@@ -233,4 +252,15 @@ class UsersController extends AppController {
 		$this->Session->setFlash(__('User was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+	private function _sendPasswordMail($user,$password){
+	    $this->Email->to = $user['User']['email'];
+	    $this->Email->subject = 'Recordatorio de contraseña';
+	    $this->Email->from = 'Coctelsong <no-reply@coctelsong.com>';
+	    $this->Email->template = 'remember_password';
+	    $this->Email->sendAs = 'both';
+	    $this->set('user', $user);
+	    $this->set('password', $password);
+	    $this->Email->send();
+	 }
 }
