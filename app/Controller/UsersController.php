@@ -37,7 +37,7 @@ class UsersController extends AppController {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved'),'default', array(), 'success');
-				$this->redirect(array('action' => 'index'));
+				$this->redirect('/login');
 			} else {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'default', array(),'error');
 			}
@@ -74,6 +74,11 @@ class UsersController extends AppController {
 			}
 		}
   }
+
+	public function logout() {
+		$this->Auth->logout();
+		return $this->redirect('/');
+	}
 /**
  * index method
  *

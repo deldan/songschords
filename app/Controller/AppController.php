@@ -36,4 +36,12 @@ class AppController extends Controller {
 	public $theme = "Bootstrap";
 	public $components = array('RequestHandler','Session', 'Auth' );
 
+  public function beforeRender(){
+    if($this->Auth->user()){
+      $this->set('currentUser', $this->Auth->user('username'));
+    } else {
+      $this->set('currentUser', null);
+    }
+  }
+
 }

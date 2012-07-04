@@ -18,11 +18,16 @@
 					<li <?php if($current_page=="songs"){echo'class="active"';} ?>>
 						<?php echo $this->Html->link('Canciones', array('controller' => 'app', 'action' => 'songs')); ?>
 					</li>
-					<li <?php if($current_page=="register"){echo'class="active"';} ?>>
+					<li <?php if($current_page=="registro"){echo'class="active"';} ?>>
 						<?php echo $this->Html->link('Registrarse', '/registro'); ?>
 					</li>
-					<li <?php if($current_page=="loguin"){echo'class="active"';} ?>>
-						<?php echo $this->Html->link('Loguearse', '/login'); ?>
+					<li<?php if($current_page=="loguin"){echo'class="active"';} ?>>
+						<? if($currentUser): ?> <a href="<?= $this->Html->url("/");?>users/logout">Logout</a></li>
+						<li>
+						 <a href="#"><?= $currentUser; ?></a>
+						<? else : ?>
+							<?php echo $this->Html->link('Loguearse', '/login'); ?>
+						<? endif;?>
 					</li>
 				</ul>
 				<form class="navbar-search pull-left" action="">
