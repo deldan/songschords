@@ -17,7 +17,7 @@
 					  <i class="icon-minus"></i>
 					  Bajar tono
 					</a>
-					<a href="#">
+					<a href="#"  id="print">
 					  <i class="icon-print"></i>
 					  Imprimir canción
 					</a>
@@ -34,30 +34,32 @@
 		</div>
 	</div>
 	<div class="span9 columns">
-		<pre>
-			<a>A</a>                        <a>D</a>
-			En mi vivir, Dios, Dios mientras respiro
-			<a>F#m</a>                   <a>E</a>
-			Cuando despierto, Dios cuando dormido
-			<a>A</a>                        <a>D</a>
-			En mi descanso, Dios en mi trabajo
-			<a>F#m</a>                   <a>E</a>
-			En mi pensaEento, Dios en lo que hablo.
+		<div id="song">
+			<pre>
+				<a>A</a>                        <a>D</a>
+				En mi vivir, Dios, Dios mientras respiro
+				<a>F#m</a>                   <a>E</a>
+				Cuando despierto, Dios cuando dormido
+				<a>A</a>                        <a>D</a>
+				En mi descanso, Dios en mi trabajo
+				<a>F#m</a>                   <a>E</a>
+				En mi pensaEento, Dios en lo que hablo.
 
-			<a>D</a>-<a>E</a>      	<a>F#m</a>-<a>E</a> (último <a>A</a>)
-			//Sé todo en mí,  sé todo en mí.//
-			<a>D</a>                 <a>E</a>                <a>F#m</a>
-			Cristo en mí, Cristo en mí, Cristo en mí, esperanza en gloria,
-			<a>D</a>-<a>E</a>           <a>F#m</a>-<a>E</a>
-			Eres todo Dios.
-			<a>D</a>                 <a>E</a>                <a>F#m</a>
-			Cristo en mí, Cristo en mí, Cristo en mí, esperanza en gloria,
-			<a>D</a>-<a>E</a>                 <a>F#m</a>-<a>E</a>
-			Sé tú todo en mí.
-			<a>D</a>-<a>E</a>            <a>F#m</a>-<a>E</a> (último <a>A</a>)
-			//Sé todo en mí,  sé todo en mí.//
-		</pre>
-		<div id="jtab">
+				<a>D</a>-<a>E</a>      	<a>F#m</a>-<a>E</a> (último <a>A</a>)
+				//Sé todo en mí,  sé todo en mí.//
+				<a>D</a>                 <a>E</a>                <a>F#m</a>
+				Cristo en mí, Cristo en mí, Cristo en mí, esperanza en gloria,
+				<a>D</a>-<a>E</a>           <a>F#m</a>-<a>E</a>
+				Eres todo Dios.
+				<a>D</a>                 <a>E</a>                <a>F#m</a>
+				Cristo en mí, Cristo en mí, Cristo en mí, esperanza en gloria,
+				<a>D</a>-<a>E</a>                 <a>F#m</a>-<a>E</a>
+				Sé tú todo en mí.
+				<a>D</a>-<a>E</a>            <a>F#m</a>-<a>E</a> (último <a>A</a>)
+				//Sé todo en mí,  sé todo en mí.//
+			</pre>
+			<div id="jtab">
+			</div>
 		</div>
 		<section class="page-header">
 			<h1>Comentarios</h1>

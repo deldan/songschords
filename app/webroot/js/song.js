@@ -70,7 +70,22 @@ window.song = function () {
 	    return my_array;
 	};
 
+	var printSong = function () {
+		$('#print').on('click', function (e) {
+			e.preventDefault();
+			console.log('print');
+			//$('#song').printPreview();
+			styleSheets = []
+			styleSheets.push("http://"+window.location.host+'/theme/Bootstrap/css/bootstrap.min.css')
+			title = $(".hero-unit h1").html()
+			console.log(title);
+			print_div("song",styleSheets, title)
+			return( false );
+		});
+	}
+
 	chordUpDown();
 	allChords();
 	favorite();
+	printSong();
 };

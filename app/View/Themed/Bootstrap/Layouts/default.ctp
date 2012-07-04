@@ -39,20 +39,22 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->css('docs');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
-		echo $this->Html->script('libs/modernizr.min');
-		echo $this->Html->script('libs/jquery');
-		echo $this->Html->script('libs/bootstrap.min');
-		echo $this->Html->script('bootstrap/application');
-		echo $this->Html->script('vendors/jquery-1.7.2.min');
-		echo $this->Html->script('vendors/underscore');
-		echo $this->Html->script('vendors/lowpro');
-		echo $this->Html->script('vendors/raphael');
-		echo $this->Html->script('vendors/jtab');
-		echo $this->Html->script('vendors/backbone');
-		echo $this->Html->script('router');
-		echo $this->Html->script('song');
-		echo $this->fetch('script');
-	?>
+		echo $this->Html->script(array(
+				'libs/modernizr.min',
+				'libs/jquery',
+				'libs/bootstrap.min',
+				'bootstrap/application',
+				//'vendors/jquery-1.7.2.min',
+				'vendors/jquery.print',
+				'vendors/underscore',
+				'vendors/lowpro',
+				'vendors/raphael',
+				'vendors/jtab',
+				'vendors/backbone',
+				'router',
+				'song'
+		));
+		echo $this->fetch('script');?>
 </head>
 <body data-spy="scroll" data-target=".subnav" data-offset="50">
 
