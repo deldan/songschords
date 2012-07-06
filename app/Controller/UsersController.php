@@ -49,7 +49,7 @@ class UsersController extends AppController {
 	public function login() {
 		if($this->request->data) {
 			if($this->Auth->login()){
-				return $this->redirect('index');
+				return $this->redirect('/');
 			} else {
 				$this->Session->setFlash('Email o contraseña incorrecta', 'default', array(),'warning');
 				$this->redirect('/login');
