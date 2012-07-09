@@ -11,7 +11,7 @@ class UsersController extends AppController {
 
 	public function beforeFilter(){
 	    parent::beforeFilter();
-	    $allow = array('login' , 'register');
+	    $allow = array('login' , 'register', 'resetUserPassword');
 	    if(Configure::read('debug') > 0) {
 	      $allow[] = 'admin_register';
 	    }
