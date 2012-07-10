@@ -11,7 +11,7 @@ class UsersController extends AppController {
 
 	public function beforeFilter(){
 	    parent::beforeFilter();
-	    $allow = array('login' , 'register', 'resetUserPassword');
+	    $allow = array('login' , 'register', 'resetUserPassword', 'profile');
 	    if(Configure::read('debug') > 0) {
 	      $allow[] = 'admin_register';
 	    }
@@ -73,11 +73,29 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('Email invalido'), 'default', array(),'error');
 			}
 		}
-  }
+  	}
 
 	public function logout() {
 		$this->Auth->logout();
 		return $this->redirect('/');
+	}
+
+	public function profile($userid = null) {
+		$istheuser = false;
+		if($userid == null){
+			$userid =$this->Auth->user('id');
+			$istheuser = true;
+		}
+		$this->set('user', $this->User->read(null, $userid));
+		$this->paginate = array(
+                              'Song' => array(
+                              	'conditions' => array('user_id' => $userid),
+                                  'limit' => 1,
+                                  'order' => array('date' => 'desc')
+                                )
+                              );
+		$this->set('songs', $this->paginate('Song'));
+		$this->set('istheuser', $istheuser);
 	}
 /**
  * index method
