@@ -13,10 +13,10 @@ class ArtistsController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	/*public function index() {
 		$this->Artist->recursive = 0;
 		$this->set('artists', $this->paginate('Artist'));
-	}
+	}*/
 
 /**
  * view method
@@ -24,20 +24,20 @@ class ArtistsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
+	/*public function view($id = null) {
 		$this->Artist->id = $id;
 		if (!$this->Artist->exists()) {
 			throw new NotFoundException(__('Invalid artist'));
 		}
 		$this->set('artist', $this->Artist->read(null, $id));
-	}
+	}*/
 
 /**
  * add method
  *
  * @return void
  */
-	public function add() {
+	/*public function add() {
 		if ($this->request->is('post')) {
 			$this->Artist->create();
 			if ($this->Artist->save($this->request->data)) {
@@ -47,7 +47,7 @@ class ArtistsController extends AppController {
 				$this->Session->setFlash(__('The artist could not be saved. Please, try again.'));
 			}
 		}
-	}
+	}*/
 
 /**
  * edit method
@@ -55,7 +55,7 @@ class ArtistsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	/*public function edit($id = null) {
 		$this->Artist->id = $id;
 		if (!$this->Artist->exists()) {
 			throw new NotFoundException(__('Invalid artist'));
@@ -70,7 +70,7 @@ class ArtistsController extends AppController {
 		} else {
 			$this->request->data = $this->Artist->read(null, $id);
 		}
-	}
+	}*/
 
 /**
  * delete method
@@ -78,7 +78,7 @@ class ArtistsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	/*public function delete($id = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
@@ -92,7 +92,7 @@ class ArtistsController extends AppController {
 		}
 		$this->Session->setFlash(__('Artist was not deleted'));
 		$this->redirect(array('action' => 'index'));
-	}
+	}*/
 /**
  * admin_index method
  *
