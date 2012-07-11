@@ -7,7 +7,7 @@ App::uses('AppController', 'Controller');
  */
 class ConcertsController extends AppController {
 
-
+	public $uses = array('Concert','Group');
 /**
  * index method
  *
@@ -206,8 +206,24 @@ class ConcertsController extends AppController {
 				$this->Session->setFlash(__('The concert could not be saved. Please, try again.'));
 			}
 		}
-		$groups = $this->Concert->Group->find('list');
+		//$groups = $this->Concert->Group->find('list');
+		
+		$user_id = $_SESSION['Auth']['User']['id'];
+		$groups = $this->Group->groupsByUser($user_id);
+		
 		$songs = $this->Concert->Song->find('list');
-		$this->set(compact('groups', 'songs'));
+		$this->set(compact('songs'));
+
+		$this->set('groups',$groups);
+	}	
+
+/**
+ * index method
+ *
+ * @return void
+ */
+	public function index() {
+		$this->Concert->recursive = 0;
+		$this->set('concerts', $this->paginate());
 	}	
 }
