@@ -7,7 +7,96 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
+	public $components = array('Password','Email');
 
+	public function beforeFilter(){
+	    parent::beforeFilter();
+	    $allow = array('login' , 'register', 'resetUserPassword', 'profile');
+	    if(Configure::read('debug') > 0) {
+	      $allow[] = 'admin_register';
+	    }
+	    $this->Auth->allow($allow);
+	    $this->Auth->autoRedirect = false;
+	  }
+
+/**
+ * Register method
+ *
+ * @return void
+ */
+	public function register() {
+		if ($this->request->is('post')) {
+			if($this->request->data['User']['service'] == 0){
+				$this->Session->setFlash('No ha aceptado los términos de servicio','default', array(), 'error');
+				$this->redirect('/registro');
+		    }
+			if($this->request->data['User']['password'] != $this->request->data['User']['confirm_password']) {
+		        $this->Session->setFlash('las contraseñas no coinciden','default', array(), 'error');
+		        $this->redirect('/registro');
+		    }
+			$this->User->create();
+			if ($this->User->save($this->request->data)) {
+				$this->Session->setFlash(__('The user has been saved'),'default', array(), 'success');
+				$this->redirect('/login');
+			} else {
+				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'default', array(),'error');
+			}
+		}
+		$groups = $this->User->Group->find('list');
+		$this->set(compact('groups'));
+	}
+
+	public function login() {
+		if($this->request->data) {
+			if($this->Auth->login()){
+				return $this->redirect('/');
+			} else {
+				$this->Session->setFlash('Email o contraseña incorrecta', 'default', array(),'warning');
+				$this->redirect('/login');
+			}
+	    }
+
+	}
+
+	public function resetUserPassword(){
+		if($this->request->data) {
+			$user = $this->User->find('first',array('conditions'=> array('User.email =' => $this->request->data['User']['email'])));
+			if(!empty($user)){
+				$newpass = $this->Password->generatePassword();
+				$this->User->id = $user['User']['id'];
+				if($this->User->saveField('password', $newpass)){
+				  $this->_sendPasswordMail($user,$newpass);
+				  $this->Session->setFlash(__('Tu Nueva contraseña a sido enviada a tu Email'), 'default', array(),'success');
+				}
+			} else {
+				$message = "Email invalido";
+				$this->Session->setFlash(__('Email invalido'), 'default', array(),'error');
+			}
+		}
+  	}
+
+	public function logout() {
+		$this->Auth->logout();
+		return $this->redirect('/');
+	}
+
+	public function profile($userid = null) {
+		$istheuser = false;
+		if($userid == null){
+			$userid =$this->Auth->user('id');
+			$istheuser = true;
+		}
+		$this->set('user', $this->User->read(null, $userid));
+		$this->paginate = array(
+                              'Song' => array(
+                              	'conditions' => array('user_id' => $userid),
+                                  'limit' => 1,
+                                  'order' => array('date' => 'desc')
+                                )
+                              );
+		$this->set('songs', $this->paginate('Song'));
+		$this->set('istheuser', $istheuser);
+	}
 /**
  * index method
  *
@@ -186,4 +275,15 @@ class UsersController extends AppController {
 		$this->Session->setFlash(__('User was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+	private function _sendPasswordMail($user,$password){
+	    $this->Email->to = $user['User']['email'];
+	    $this->Email->subject = 'Recordatorio de contraseña';
+	    $this->Email->from = 'Coctelsong <no-reply@coctelsong.com>';
+	    $this->Email->template = 'remember_password';
+	    $this->Email->sendAs = 'both';
+	    $this->set('user', $user);
+	    $this->set('password', $password);
+	    $this->Email->send();
+	 }
 }

@@ -1,0 +1,56 @@
+.form-horizontal  .help-block{
+	display: inline-block;
+	margin-bottom: 0;
+	padding-left: 5px;
+	vertical-align: middle;
+}
+.pagination .current{
+	float: left;
+	padding: 0 14px;
+	line-height: 34px;
+	text-decoration: none;
+	border: 1px solid #DDD;
+	border-left-width: 0;
+
+}
+.pagination .prev{
+	float: left;
+	line-height: 34px;
+	text-decoration: none;
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+	color: #999;
+	cursor: default;
+	background-color: transparent;
+
+}
+.pagination .prev a{
+	border-left-width: 1px;
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+.pagination .next a{
+	border-right-width: 1px;
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+.pagination .next{
+	float: left;
+	line-height: 34px;
+	text-decoration: none;
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+	color: #999;
+	cursor: default;
+	background-color: transparent;
+	margin-left: -1px;
+}
+.pagination .disabled{
+		padding: 0 14px;
+		border: 1px solid #DDD;
+
+}

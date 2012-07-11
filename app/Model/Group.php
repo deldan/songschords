@@ -22,7 +22,15 @@ class Group extends AppModel {
 		'name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'El campo no puede estar vacío',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+			'mincaracteres' => array(
+				'rule' => array('minLength', 2),
+				'message' => 'El campo debe ser mayor de dos carácteres',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

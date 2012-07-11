@@ -22,8 +22,22 @@
 	<title><?php echo $title_for_layout;?></title>
 </head>
 <body>
-	<?php echo $content_for_layout;?>
-
-	<p>This email was sent using the <a href="http://cakephp.org">CakePHP Framework</a></p>
+  <div style="background-color: #ffffff;
+              border-color: #2C2C2C;
+              border-style: solid;
+              border-width: 1px;
+              padding-bottom: 20px;
+              padding-top: 20px;
+              text-align: center;">
+    <p style="text-align:center;">
+      <a href="http://www.coctelsong.com" style="text-decoration:none;">
+        CoctelSong
+      </a>
+    </p>
+      <?php echo $content_for_layout;?>
+    <div style="text-align: center;">
+      <p style="font-size: 9px;">coctelsong.com - Para darse de baja ecribenos a info@coctelsong.com</p>
+    </div>
+  </div>
 </body>
 </html>

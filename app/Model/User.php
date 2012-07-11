@@ -1,5 +1,6 @@
 <?php
 App::uses('AppModel', 'Model');
+App::uses('Security', 'Utility');
 /**
  * User Model
  *
@@ -22,7 +23,7 @@ class User extends AppModel {
 		'email' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Email obligatorio',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -30,7 +31,7 @@ class User extends AppModel {
 			),
 			'email' => array(
 				'rule' => array('email'),
-				//'message' => 'Your custom message here',
+				'message' => 'Formato no valido',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -40,7 +41,7 @@ class User extends AppModel {
 		'username' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Usuario obligatorio',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -50,7 +51,7 @@ class User extends AppModel {
 		'password' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Contraseña obligatoria',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -105,5 +106,12 @@ class User extends AppModel {
 			'insertQuery' => ''
 		)
 	);
+
+	public function beforeSave() {
+	    if(isset($this->data['User']['password'])){
+	       $this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
+	    }
+	    return true;
+	  }
 
 }

@@ -16,7 +16,7 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', 'Coctelsongs');
 ?>
 <!doctype html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -35,24 +35,28 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 		echo $this->Html->css('bootstrap.min');
 		echo $this->Html->css('bootstrap-responsive.min');
+		echo $this->Html->css('songs');
 		// docs.css is only for this exapmple, remove for app dev
 		echo $this->Html->css('docs');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
-		echo $this->Html->script('libs/modernizr.min');
-		echo $this->Html->script('libs/jquery');
-		echo $this->Html->script('libs/bootstrap.min');
-		echo $this->Html->script('bootstrap/application');
-		echo $this->Html->script('vendors/jquery-1.7.2.min');
-		echo $this->Html->script('vendors/underscore');
-		echo $this->Html->script('vendors/lowpro');
-		echo $this->Html->script('vendors/raphael');
-		echo $this->Html->script('vendors/jtab');
-		echo $this->Html->script('vendors/backbone');
-		echo $this->Html->script('router');
-		echo $this->Html->script('song');
-		echo $this->fetch('script');
-	?>
+		echo $this->Html->script(array(
+				'libs/modernizr.min',
+				'libs/jquery',
+				'libs/bootstrap.min',
+				'bootstrap/application',
+				//'vendors/jquery-1.7.2.min',
+				'vendors/jquery.print',
+				'vendors/underscore',
+				'vendors/lowpro',
+				'vendors/raphael',
+				'vendors/jtab',
+				'vendors/backbone',
+				'vendors/jquery.validate',
+				'router',
+				'song'
+		));
+		echo $this->fetch('script');?>
 </head>
 <body data-spy="scroll" data-target=".subnav" data-offset="50">
 
@@ -63,10 +67,12 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 	<div id="container">
 		<div id="content">
-			<?php echo $this->Session->flash(); ?>
-
 			<?php echo $this->element('menu/top_menu'); ?>
 			<div class="container">
+				<? echo $this->Session->flash('error', array('element' => 'error'));?>
+				<? echo $this->Session->flash('success', array('element' => 'success'));?>
+				<? echo $this->Session->flash('information', array('element' => 'information'));?>
+				<? echo $this->Session->flash('warning', array('element' => 'warning'));?>
 				<?php echo $this->fetch('content'); ?>
 			</div>
 		</div>

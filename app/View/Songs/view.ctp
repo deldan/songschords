@@ -1,94 +1,97 @@
-<div class="songs view">
-<h2><?php  echo __('Song');?></h2>
-	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($song['Song']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Artist'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($song['Artist']['name'], array('controller' => 'artists', 'action' => 'view', $song['Artist']['id'])); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('User'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($song['User']['username'], array('controller' => 'users', 'action' => 'view', $song['User']['id'])); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Title'); ?></dt>
-		<dd>
-			<?php echo h($song['Song']['title']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Song'); ?></dt>
-		<dd>
-			<?php echo h($song['Song']['song']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Created'); ?></dt>
-		<dd>
-			<?php echo h($song['Song']['created']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Modified'); ?></dt>
-		<dd>
-			<?php echo h($song['Song']['modified']); ?>
-			&nbsp;
-		</dd>
-	</dl>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Song'), array('action' => 'edit', $song['Song']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Song'), array('action' => 'delete', $song['Song']['id']), null, __('Are you sure you want to delete # %s?', $song['Song']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Songs'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Song'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Artists'), array('controller' => 'artists', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Artist'), array('controller' => 'artists', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Concerts'), array('controller' => 'concerts', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Concert'), array('controller' => 'concerts', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
-<div class="related">
-	<h3><?php echo __('Related Concerts');?></h3>
-	<?php if (!empty($song['Concert'])):?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Group Id'); ?></th>
-		<th><?php echo __('Name'); ?></th>
-		<th><?php echo __('Data'); ?></th>
-		<th><?php echo __('Created'); ?></th>
-		<th><?php echo __('Modified'); ?></th>
-		<th class="actions"><?php echo __('Actions');?></th>
-	</tr>
-	<?php
-		$i = 0;
-		foreach ($song['Concert'] as $concert): ?>
-		<tr>
-			<td><?php echo $concert['id'];?></td>
-			<td><?php echo $concert['group_id'];?></td>
-			<td><?php echo $concert['name'];?></td>
-			<td><?php echo $concert['data'];?></td>
-			<td><?php echo $concert['created'];?></td>
-			<td><?php echo $concert['modified'];?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'concerts', 'action' => 'view', $concert['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'concerts', 'action' => 'edit', $concert['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'concerts', 'action' => 'delete', $concert['id']), null, __('Are you sure you want to delete # %s?', $concert['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Concert'), array('controller' => 'concerts', 'action' => 'add'));?> </li>
-		</ul>
+<div class="row">
+	<div class="span12 columns">
+		<div class="hero-unit">
+			<h1><?php echo $song['Song']['title']; ?></h1>
+			<p><?php echo $this->Html->link($song['Artist']['name'], array('controller' => 'artists', 'action' => 'view', $song['Artist']['id'])); ?></p>
+		</div>
+	</div>
+	<div class="span3 columns">
+		<div class="well">
+			<ul class="nav nav-list">
+				<li>
+					<a href="#" id="plus">
+					  <i class="icon-plus"></i>
+					  Subir tono
+					</a>
+					<a href="#" id="minus">
+					  <i class="icon-minus"></i>
+					  Bajar tono
+					</a>
+					<a href="#"  id="print">
+					  <i class="icon-print"></i>
+					  Imprimir canción
+					</a>
+					<a href="#">
+					  <i class="icon-download"></i>
+					  Descargar
+					</a>
+					<a href="#" id="favorite">
+					  <i class="icon-star-empty"></i>
+					  Guardar como favorito
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="span9 columns">
+		<div id="song">
+			<pre>
+				<?php echo $song['Song']['song']; ?>
+			</pre>
+			<div id="jtab">
+			</div>
+		</div>
+		<section class="page-header">
+			<h1>Comentarios</h1>
+		</section>
+		<div id="comments">
+			<div class="well">
+				<div class="row">
+				  <div class="span1">
+				  	<a href="#" class="thumbnail">
+				      	<img src="<?php echo $this->Html->url("/");?>img/user.png" alt="user">
+				    </a>
+				</div>
+				<div class="span5">
+				<blockquote>
+					La canción me ha gustado, donde puedo conseguir el mp3?
+					<small>deldan</small>
+				</blockquote>
+				</div>
+				</div>
+			</div>
+			<div class="well">
+			 	<div class="row">
+				  <div class="span1">
+				  	<a href="#" class="thumbnail">
+				      	<img src="<?php echo $this->Html->url("/");?>img/user.png" alt="user">
+				    </a>
+				</div>
+				<div class="span5">
+				<blockquote>
+					Los acordes están mal puestos porfavor revisarlos
+					<small>yises</small>
+				</blockquote>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div id="comment">
+			<form class="form-horizontal">
+			  <fieldset>
+			    <legend>Comentar</legend>
+			    <div class="control-group">
+		            <label class="control-label" for="textarea">Comentario:</label>
+		            <div class="controls">
+		              <textarea class="input-xlarge" id="textarea" rows="3"></textarea>
+		            </div>
+		        </div>
+		        <div class="form-actions">
+		            <button type="submit" class="btn btn-primary">Comentar</button>
+		            <button class="btn">Cancelar</button>
+		        </div>
+			  </fieldset>
+			</form>
+		</div>
 	</div>
 </div>
