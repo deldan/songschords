@@ -12,7 +12,7 @@
 					  <i class="icon-plus-sign"></i>
 					  Crear Canción
 					</a>
-					<a href="#">
+					<a href="<?= $this->Html->url("/");?>groups/create_group">
 					  <i class="icon-plus-sign"></i>
 					  Crear Grupo
 					</a>
@@ -28,6 +28,11 @@
 					  <i class="icon-th-list"></i>
 					  Gestionar Bolos
 					</a>
+				</ul>
+			</div>
+
+
+
 
 				</li>
 			</ul>
