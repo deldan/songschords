@@ -16,7 +16,7 @@
 					  <i class="icon-plus-sign"></i>
 					  Crear Grupo
 					</a>
-					<a href="#">
+					<a href="<?= $this->Html->url("/");?>concerts/createConcert">
 					  <i class="icon-plus-sign"></i>
 					  Crear Bolo
 					</a>

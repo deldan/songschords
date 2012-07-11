@@ -190,4 +190,24 @@ class ConcertsController extends AppController {
 		$this->Session->setFlash(__('Concert was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+/**
+ * add method
+ *
+ * @return void
+ */
+	public function createConcert() {
+		if ($this->request->is('post')) {
+			$this->Concert->create();
+			if ($this->Concert->save($this->request->data)) {
+				$this->Session->setFlash(__('The concert has been saved'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The concert could not be saved. Please, try again.'));
+			}
+		}
+		$groups = $this->Concert->Group->find('list');
+		$songs = $this->Concert->Song->find('list');
+		$this->set(compact('groups', 'songs'));
+	}	
 }
