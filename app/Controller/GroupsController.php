@@ -9,29 +9,6 @@ class GroupsController extends AppController {
 
 public $components = array('Email');
 public $uses = array('Group','UsersGroup');
-/**
- * index method
- *
- * @return void
- */
-	public function index() {
-		$this->Group->recursive = 0;
-		$this->set('groups', $this->paginate());
-	}
-
-/**
- * view method
- *
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		$this->Group->id = $id;
-		if (!$this->Group->exists()) {
-			throw new NotFoundException(__('Invalid group'));
-		}
-		$this->set('group', $this->Group->read(null, $id));
-	}
 
 /**
  * add method
@@ -52,6 +29,49 @@ public $uses = array('Group','UsersGroup');
 		$this->set(compact('users'));
 	}
 
+/**
+ * add method
+ *
+ * @return void
+ */
+	/*public function add() {
+		if ($this->request->is('post')) {
+			$this->Group->create();
+			if ($this->Group->save($this->request->data)) {
+				$this->Session->setFlash(__('The group has been saved'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
+			}
+		}
+		$users = $this->Group->User->find('list');
+		$this->set(compact('users'));
+	}*/
+
+/**
+ * index method
+ *
+ * @return void
+ */
+	/*public function index() {
+		$this->Group->recursive = 0;
+		$this->set('groups', $this->paginate());
+	}*/
+
+/**
+ * view method
+ *
+ * @param string $id
+ * @return void
+ */
+	/*public function view($id = null) {
+		$this->Group->id = $id;
+		if (!$this->Group->exists()) {
+			throw new NotFoundException(__('Invalid group'));
+		}
+		$this->set('group', $this->Group->read(null, $id));
+	}*/
+
 	public function manage_group($id = null) {
 		$this->Group->recursive = 0;
 		$this->set('groups', $this->paginate());
@@ -63,7 +83,7 @@ public $uses = array('Group','UsersGroup');
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	/*public function edit($id = null) {
 		$this->Group->id = $id;
 		if (!$this->Group->exists()) {
 			throw new NotFoundException(__('Invalid group'));
@@ -80,7 +100,7 @@ public $uses = array('Group','UsersGroup');
 		}
 		$users = $this->Group->User->find('list');
 		$this->set(compact('users'));
-	}
+	}*/
 
 /**
  * delete method
@@ -101,7 +121,6 @@ public $uses = array('Group','UsersGroup');
 			$this->redirect("/groups/manage_group");
 		}
 		$this->Session->setFlash(__('Group was not deleted'));
-		$this->redirect("/groups/manage_group");
 	}
 
 
@@ -139,7 +158,6 @@ public $uses = array('Group','UsersGroup');
 	    $this->Email->sendAs = 'both';
 	    $this->Email->send();
 	}
-
 
 /**
  * admin_index method
