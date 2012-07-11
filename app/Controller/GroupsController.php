@@ -8,6 +8,26 @@ App::uses('AppController', 'Controller');
 class GroupsController extends AppController {
 
 
+
+/**
+ * add method
+ *
+ * @return void
+ */
+	public function add() {
+		if ($this->request->is('post')) {
+			$this->Group->create();
+			if ($this->Group->save($this->request->data)) {
+				$this->Session->setFlash(__('The group has been saved'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
+			}
+		}
+		$users = $this->Group->User->find('list');
+		$this->set(compact('users'));
+	}
+
 /**
  * index method
  *
@@ -32,12 +52,14 @@ class GroupsController extends AppController {
 		$this->set('group', $this->Group->read(null, $id));
 	}
 
+
+
 /**
  * add method
  *
  * @return void
  */
-	public function add() {
+/*	public function add() {
 		if ($this->request->is('post')) {
 			$this->Group->create();
 			if ($this->Group->save($this->request->data)) {
@@ -49,7 +71,7 @@ class GroupsController extends AppController {
 		}
 		$users = $this->Group->User->find('list');
 		$this->set(compact('users'));
-	}
+	}*/
 
 /**
  * edit method
