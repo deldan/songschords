@@ -7,53 +7,6 @@ App::uses('AppController', 'Controller');
  */
 class GroupsController extends AppController {
 
-
-
-/**
- * add method
- *
- * @return void
- */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->Group->create();
-			if ($this->Group->save($this->request->data)) {
-				$this->Session->setFlash(__('The group has been saved'));
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
-			}
-		}
-		$users = $this->Group->User->find('list');
-		$this->set(compact('users'));
-	}
-
-/**
- * index method
- *
- * @return void
- */
-	public function index() {
-		$this->Group->recursive = 0;
-		$this->set('groups', $this->paginate());
-	}
-
-/**
- * view method
- *
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		$this->Group->id = $id;
-		if (!$this->Group->exists()) {
-			throw new NotFoundException(__('Invalid group'));
-		}
-		$this->set('group', $this->Group->read(null, $id));
-	}
-
-
-
 /**
  * add method
  *
@@ -74,12 +27,55 @@ class GroupsController extends AppController {
 	}
 
 /**
+ * add method
+ *
+ * @return void
+ */
+	/*public function add() {
+		if ($this->request->is('post')) {
+			$this->Group->create();
+			if ($this->Group->save($this->request->data)) {
+				$this->Session->setFlash(__('The group has been saved'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The group could not be saved. Please, try again.'));
+			}
+		}
+		$users = $this->Group->User->find('list');
+		$this->set(compact('users'));
+	}*/
+
+/**
+ * index method
+ *
+ * @return void
+ */
+	/*public function index() {
+		$this->Group->recursive = 0;
+		$this->set('groups', $this->paginate());
+	}*/
+
+/**
+ * view method
+ *
+ * @param string $id
+ * @return void
+ */
+	/*public function view($id = null) {
+		$this->Group->id = $id;
+		if (!$this->Group->exists()) {
+			throw new NotFoundException(__('Invalid group'));
+		}
+		$this->set('group', $this->Group->read(null, $id));
+	}*/
+
+/**
  * edit method
  *
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	/*public function edit($id = null) {
 		$this->Group->id = $id;
 		if (!$this->Group->exists()) {
 			throw new NotFoundException(__('Invalid group'));
@@ -96,7 +92,7 @@ class GroupsController extends AppController {
 		}
 		$users = $this->Group->User->find('list');
 		$this->set(compact('users'));
-	}
+	}*/
 
 /**
  * delete method
@@ -104,7 +100,7 @@ class GroupsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	/*public function delete($id = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
@@ -118,7 +114,7 @@ class GroupsController extends AppController {
 		}
 		$this->Session->setFlash(__('Group was not deleted'));
 		$this->redirect(array('action' => 'index'));
-	}
+	}*/
 /**
  * admin_index method
  *

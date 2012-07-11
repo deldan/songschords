@@ -13,10 +13,10 @@ class SongsController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	/*public function index() {
 		$this->Song->recursive = 0;
 		$this->set('songs', $this->paginate('Song'));
-	}
+	}*/
 
 /**
  * view method
@@ -24,20 +24,20 @@ class SongsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
+	/*public function view($id = null) {
 		$this->Song->id = $id;
 		if (!$this->Song->exists()) {
 			throw new NotFoundException(__('Invalid song'));
 		}
 		$this->set('song', $this->Song->read(null, $id));
-	}
+	}*/
 
 /**
  * add method
  *
  * @return void
  */
-	public function add() {
+	/*public function add() {
 		if ($this->request->is('post')) {
 			$this->Song->create();
 			if ($this->Song->save($this->request->data)) {
@@ -51,7 +51,7 @@ class SongsController extends AppController {
 		$users = $this->Song->User->find('list');
 		$concerts = $this->Song->Concert->find('list');
 		$this->set(compact('artists', 'users', 'concerts'));
-	}
+	}*/
 
 /**
  * edit method
@@ -59,7 +59,7 @@ class SongsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	/*public function edit($id = null) {
 		$this->Song->id = $id;
 		if (!$this->Song->exists()) {
 			throw new NotFoundException(__('Invalid song'));
@@ -78,7 +78,7 @@ class SongsController extends AppController {
 		$users = $this->Song->User->find('list');
 		$concerts = $this->Song->Concert->find('list');
 		$this->set(compact('artists', 'users', 'concerts'));
-	}
+	}*/
 
 /**
  * delete method
@@ -86,7 +86,7 @@ class SongsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	/*public function delete($id = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
@@ -100,7 +100,7 @@ class SongsController extends AppController {
 		}
 		$this->Session->setFlash(__('Song was not deleted'));
 		$this->redirect(array('action' => 'index'));
-	}
+	}*/
 /**
  * admin_index method
  *

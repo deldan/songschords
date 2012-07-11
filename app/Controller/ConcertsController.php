@@ -13,10 +13,10 @@ class ConcertsController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	/*public function index() {
 		$this->Concert->recursive = 0;
 		$this->set('concerts', $this->paginate());
-	}
+	}*/
 
 /**
  * view method
@@ -24,20 +24,20 @@ class ConcertsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
+	/*public function view($id = null) {
 		$this->Concert->id = $id;
 		if (!$this->Concert->exists()) {
 			throw new NotFoundException(__('Invalid concert'));
 		}
 		$this->set('concert', $this->Concert->read(null, $id));
-	}
+	}*/
 
 /**
  * add method
  *
  * @return void
  */
-	public function add() {
+	/*public function add() {
 		if ($this->request->is('post')) {
 			$this->Concert->create();
 			if ($this->Concert->save($this->request->data)) {
@@ -50,7 +50,7 @@ class ConcertsController extends AppController {
 		$groups = $this->Concert->Group->find('list');
 		$songs = $this->Concert->Song->find('list');
 		$this->set(compact('groups', 'songs'));
-	}
+	}*/
 
 /**
  * edit method
@@ -58,7 +58,7 @@ class ConcertsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	/*public function edit($id = null) {
 		$this->Concert->id = $id;
 		if (!$this->Concert->exists()) {
 			throw new NotFoundException(__('Invalid concert'));
@@ -76,7 +76,7 @@ class ConcertsController extends AppController {
 		$groups = $this->Concert->Group->find('list');
 		$songs = $this->Concert->Song->find('list');
 		$this->set(compact('groups', 'songs'));
-	}
+	}*/
 
 /**
  * delete method
@@ -84,7 +84,7 @@ class ConcertsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	/*public function delete($id = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
@@ -98,7 +98,7 @@ class ConcertsController extends AppController {
 		}
 		$this->Session->setFlash(__('Concert was not deleted'));
 		$this->redirect(array('action' => 'index'));
-	}
+	}*/
 /**
  * admin_index method
  *
