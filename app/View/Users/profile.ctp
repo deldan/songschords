@@ -20,7 +20,7 @@
 					  <i class="icon-plus-sign"></i>
 					  Crear Bolo
 					</a>
-					<a href="#"  id="print">
+					<a href="<?= $this->Html->url("/");?>groups/manage_group">
 					  <i class="icon-th-list"></i>
 					  Gestionar Grupos
 					</a>
