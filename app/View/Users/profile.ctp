@@ -28,12 +28,6 @@
 					  <i class="icon-th-list"></i>
 					  Gestionar Bolos
 					</a>
-				</ul>
-			</div>
-
-
-
-
 				</li>
 			</ul>
 		</div>
