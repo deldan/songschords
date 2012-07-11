@@ -7,6 +7,9 @@ App::uses('AppController', 'Controller');
  */
 class GroupsController extends AppController {
 
+public $components = array('Email');
+public $uses = array('Group','UsersGroup');
+
 /**
  * add method
  *
@@ -69,6 +72,11 @@ class GroupsController extends AppController {
 		$this->set('group', $this->Group->read(null, $id));
 	}*/
 
+	public function manage_group($id = null) {
+		$this->Group->recursive = 0;
+		$this->set('groups', $this->paginate());
+	}
+
 /**
  * edit method
  *
@@ -100,7 +108,7 @@ class GroupsController extends AppController {
  * @param string $id
  * @return void
  */
-	/*public function delete($id = null) {
+	public function delete($id = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
@@ -109,12 +117,48 @@ class GroupsController extends AppController {
 			throw new NotFoundException(__('Invalid group'));
 		}
 		if ($this->Group->delete()) {
-			$this->Session->setFlash(__('Group deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->Session->setFlash(__('Gropo eliminado'));
+			$this->redirect("/groups/manage_group");
 		}
 		$this->Session->setFlash(__('Group was not deleted'));
-		$this->redirect(array('action' => 'index'));
-	}*/
+	}
+
+
+	public function search_user($groupId = null){
+		if($this->request->data) {
+			$this->loadModel('User');
+			$user = $this->User->find('first',array('conditions'=> array('User.email =' => $this->request->data['User']['email'])));
+			if(!empty($user)){
+				$this->User->id = $user['User']['id'];
+				$group['UsersGroup']['user_id'] = $user['User']['id'];
+				$group['UsersGroup']['group_id'] = $this->request->data['User']['groupid'];
+				$this->UsersGroup->save($group);
+				$this->Session->setFlash(__('Se ha añadido correctamente!'), 'default', array(),'success');
+			
+			} else {
+				$email = $this->request->data['User']['email'];
+				$this->User->set($this->request->data);
+				if($this->User->validates(array('fieldlist'=>array('email')))){
+					$this->_sendGroupRequest($email);
+					$this->Session->setFlash(__('Se ha mandado un correo al usuario'), 'default', array(),'success');
+				}else{
+					$this->Session->setFlash(__('No se ha podido mandar un correo'), 'default', array(),'error');
+				}	
+			}
+	  	}
+	  	$this->set('groupid',$groupId);
+	}
+
+	private function _sendGroupRequest($email){
+		//var_dump($email);
+	    $this->Email->to = $email;
+	    $this->Email->subject = 'Invitación al grupo de Coctelsong';
+	    $this->Email->from = 'Coctelsong <no-reply@coctelsong.com>';
+	    $this->Email->template = 'invitation';
+	    $this->Email->sendAs = 'both';
+	    $this->Email->send();
+	}
+
 /**
  * admin_index method
  *
