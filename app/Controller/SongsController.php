@@ -13,10 +13,10 @@ class SongsController extends AppController {
  *
  * @return void
  */
-	/*public function index() {
+	public function index() {
 		$this->Song->recursive = 0;
 		$this->set('songs', $this->paginate('Song'));
-	}*/
+	}
 
 /**
  * view method
@@ -37,7 +37,7 @@ class SongsController extends AppController {
  *
  * @return void
  */
-	/*public function add() {
+	public function add() {
 		if ($this->request->is('post')) {
 			$this->Song->create();
 			if ($this->Song->save($this->request->data)) {
@@ -51,7 +51,7 @@ class SongsController extends AppController {
 		$users = $this->Song->User->find('list');
 		$concerts = $this->Song->Concert->find('list');
 		$this->set(compact('artists', 'users', 'concerts'));
-	}*/
+	}
 
 /**
  * edit method
@@ -59,7 +59,7 @@ class SongsController extends AppController {
  * @param string $id
  * @return void
  */
-	/*public function edit($id = null) {
+	public function edit($id = null) {
 		$this->Song->id = $id;
 		if (!$this->Song->exists()) {
 			throw new NotFoundException(__('Invalid song'));
@@ -78,7 +78,7 @@ class SongsController extends AppController {
 		$users = $this->Song->User->find('list');
 		$concerts = $this->Song->Concert->find('list');
 		$this->set(compact('artists', 'users', 'concerts'));
-	}*/
+	}
 
 /**
  * delete method

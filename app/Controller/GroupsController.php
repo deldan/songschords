@@ -64,13 +64,13 @@ public $uses = array('Group','UsersGroup');
  * @param string $id
  * @return void
  */
-	/*public function view($id = null) {
+	public function view($id = null) {
 		$this->Group->id = $id;
 		if (!$this->Group->exists()) {
 			throw new NotFoundException(__('Invalid group'));
 		}
 		$this->set('group', $this->Group->read(null, $id));
-	}*/
+	}
 
 	public function editGroup($id = null) {
 		$this->Group->recursive = 0;

@@ -24,13 +24,13 @@ class ArtistsController extends AppController {
  * @param string $id
  * @return void
  */
-	/*public function view($id = null) {
+	public function view($id = null) {
 		$this->Artist->id = $id;
 		if (!$this->Artist->exists()) {
 			throw new NotFoundException(__('Invalid artist'));
 		}
 		$this->set('artist', $this->Artist->read(null, $id));
-	}*/
+	}
 
 /**
  * add method

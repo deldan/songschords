@@ -6,7 +6,6 @@
   <?= $this->element('song_bar') ?>
 <? $this->end() ?>
 
-
 <div class="row">
 	<div class="span9 columns">
 		<div id="song">
