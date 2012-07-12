@@ -42,10 +42,15 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
 		</div>
 		<div id="content">
-
 			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
+			<div class="row">
+				<div id="user_bar"> 
+					<? if($this->fetch('sidebar')): ?>
+						<?= $this->fetch('sidebar') ?>
+					<? endif; ?>
+				</div>
+				<?php echo $this->fetch('content'); ?>
+			</div>
 		</div>
 		<div id="footer">
 			<?php echo $this->Html->link(
@@ -59,3 +64,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>
+
+
+
+

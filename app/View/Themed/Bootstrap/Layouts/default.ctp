@@ -73,7 +73,15 @@ $cakeDescription = __d('cake_dev', 'Coctelsongs');
 				<? echo $this->Session->flash('success', array('element' => 'success'));?>
 				<? echo $this->Session->flash('information', array('element' => 'information'));?>
 				<? echo $this->Session->flash('warning', array('element' => 'warning'));?>
-				<?php echo $this->fetch('content'); ?>
+				<div class="row">
+					<? if($this->fetch('topbar')): ?>
+						<?= $this->fetch('topbar') ?>
+					<? endif; ?>
+					<? if($this->fetch('sidebar')): ?>
+						<?= $this->fetch('sidebar') ?>
+					<? endif; ?>
+					<?php echo $this->fetch('content'); ?>
+				</div>
 			</div>
 		</div>
 	</div>

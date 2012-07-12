@@ -86,7 +86,6 @@ class UsersController extends AppController {
 			$userid =$this->Auth->user('id');
 			$istheuser = true;
 		}
-		$this->set('user', $this->User->read(null, $userid));
 		$this->paginate = array(
                               'Song' => array(
                               	'conditions' => array('user_id' => $userid),

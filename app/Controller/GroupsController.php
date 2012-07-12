@@ -15,12 +15,12 @@ public $uses = array('Group','UsersGroup');
  *
  * @return void
  */
-	public function create_group() {
+	public function createGroup() {
 		if ($this->request->is('post')) {
 			$this->Group->create();
 			if ($this->Group->save($this->request->data)) {
 				$this->Session->setFlash(__('Grupo guardado'),'default', array(), 'success');
-				$this->redirect("/users/profile");
+				$this->redirect("/groups/editGroup");
 			} else {
 				$this->Session->setFlash(__('No se ha podido guardar. Intentalo de nuevo'),'default', array(), 'error');
 			}
@@ -72,7 +72,7 @@ public $uses = array('Group','UsersGroup');
 		$this->set('group', $this->Group->read(null, $id));
 	}*/
 
-	public function manage_group($id = null) {
+	public function editGroup($id = null) {
 		$this->Group->recursive = 0;
 		$this->set('groups', $this->paginate());
 	}
@@ -117,14 +117,14 @@ public $uses = array('Group','UsersGroup');
 			throw new NotFoundException(__('Invalid group'));
 		}
 		if ($this->Group->delete()) {
-			$this->Session->setFlash(__('Gropo eliminado'));
-			$this->redirect("/groups/manage_group");
+			$this->Session->setFlash(__('Grupo eliminado'));
+			$this->redirect("/groups/editGroup");
 		}
 		$this->Session->setFlash(__('Group was not deleted'));
 	}
 
 
-	public function search_user($groupId = null){
+	public function searchUser($groupId = null){
 		if($this->request->data) {
 			$this->loadModel('User');
 			$user = $this->User->find('first',array('conditions'=> array('User.email =' => $this->request->data['User']['email'])));

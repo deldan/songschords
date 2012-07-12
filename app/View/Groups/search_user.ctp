@@ -1,4 +1,13 @@
-<div class="users form well span6 offset2">
+<? $this->start('topbar') ?>
+  <?= $this->element('user_top', array('name' => $currentUser)) ?>
+<? $this->end() ?>
+
+<? $this->start('sidebar') ?>
+  <?= $this->element('user_bar') ?>
+<? $this->end() ?>
+
+
+<div class="users form well span8">
 <?php echo $this->Form->create('User', array('class' => 'form-horizontal'));?>
 	<fieldset>
 		<legend><?php echo __('Añadir usuario'); ?></legend>

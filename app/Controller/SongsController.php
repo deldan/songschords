@@ -24,13 +24,13 @@ class SongsController extends AppController {
  * @param string $id
  * @return void
  */
-	/*public function view($id = null) {
+	public function view($id = null) {
 		$this->Song->id = $id;
 		if (!$this->Song->exists()) {
 			throw new NotFoundException(__('Invalid song'));
 		}
 		$this->set('song', $this->Song->read(null, $id));
-	}*/
+	}
 
 /**
  * add method

@@ -1,4 +1,13 @@
-<div class="concerts form">
+<? $this->start('topbar') ?>
+  <?= $this->element('user_top', array('name' => $currentUser)) ?>
+<? $this->end() ?>
+
+<? $this->start('sidebar') ?>
+  <?= $this->element('user_bar') ?>
+<? $this->end() ?>
+
+
+<div class="concerts form well span8">
 <?php echo $this->Form->create('Concert');?>
 	<fieldset>
 		<legend><?php echo __('Agregar concierto'); ?></legend>
