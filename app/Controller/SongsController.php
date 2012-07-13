@@ -7,10 +7,45 @@ App::uses('AppController', 'Controller');
  */
 class SongsController extends AppController {
 
-	public function readSong(){
-		echo "hola";
-		$archivo = file("archivo.txt"); $lineas = count($archivo); for($i=0; $i < $lineas; $i++){ echo $archivo[$i]; }
+	private function countNotes( $linea) {
+    
+    $count = 0;
+    $nota = array ('C', ' D ', 'E', 'F', 'G', 'A', 'B', 'Do', 'Re', 'Mi', 'Fa', 'Sol', 'La', 'Si', 'Do'); 
+
+	    foreach ($nota as $substring) {
+	    	$count += substr_count( $linea, $substring);
+	    }
+			echo "<br>";
+	    echo "Número de notas:";
+	    echo $count;
+		if ($count>"2"){
+					echo "<br>";
+					echo "Hay más notas";
+				}else{
+					echo "<br>";	
+					echo "Hay más palabras";
+				}
+
 	}
+
+	public function readSong(){
+		
+		$archivo = "archivo"; 
+		$contenido = file_get_contents($archivo);
+		$lineas = explode("\n",$contenido);
+		foreach ($lineas as $linea) {
+
+			$this->countNotes($linea);
+
+			echo "<br>";	
+			echo $linea."\n"; 
+			echo "<br>";
+			echo "Número de palabras :";
+			echo str_word_count($linea, 0, '#');
+			echo "<br>";
+		}
+	}
+	
 /**
  * index method
  *
