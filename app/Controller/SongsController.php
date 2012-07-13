@@ -7,7 +7,10 @@ App::uses('AppController', 'Controller');
  */
 class SongsController extends AppController {
 
-
+	public function readSong(){
+		echo "hola";
+		$archivo = file("archivo.txt"); $lineas = count($archivo); for($i=0; $i < $lineas; $i++){ echo $archivo[$i]; }
+	}
 /**
  * index method
  *

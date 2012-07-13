@@ -16,8 +16,8 @@
 	    <tr>
 	      <th>#</th>
 	      <th>Título</th>
-	      <th>Artísta</th>
-	      <th>Fecha de súbida</th>
+	      <th>Artista</th>
+	      <th>Fecha de subida</th>
 	    </tr>
 	  </thead>
 		<?php foreach ($songs as $song): ?>

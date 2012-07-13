@@ -72,9 +72,9 @@
 			<td><?php echo $song['created'];?></td>
 			<td><?php echo $song['modified'];?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'songs', 'action' => 'view', $song['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'songs', 'action' => 'edit', $song['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'songs', 'action' => 'delete', $song['id']), null, __('Are you sure you want to delete # %s?', $song['id'])); ?>
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'songs', 'action' => 'view', $song['id'])); ?>
+				<?php echo $this->Html->link(__('Editar'), array('controller' => 'songs', 'action' => 'edit', $song['id'])); ?>
+				<?php echo $this->Form->postLink(__('Borrar'), array('controller' => 'songs', 'action' => 'delete', $song['id']), null, __('¿Estás seguro de que quieres borrar # %s?', $song['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -107,9 +107,9 @@
 			<td><?php echo $group['created'];?></td>
 			<td><?php echo $group['modified'];?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'groups', 'action' => 'view', $group['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'groups', 'action' => 'edit', $group['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'groups', 'action' => 'delete', $group['id']), null, __('Are you sure you want to delete # %s?', $group['id'])); ?>
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'groups', 'action' => 'view', $group['id'])); ?>
+				<?php echo $this->Html->link(__('Editar'), array('controller' => 'groups', 'action' => 'edit', $group['id'])); ?>
+				<?php echo $this->Form->postLink(__('Borrar'), array('controller' => 'groups', 'action' => 'delete', $group['id']), null, __('¿Estás seguro de que quieres borrar # %s?', $group['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>

@@ -65,10 +65,13 @@ public $uses = array('Group','UsersGroup');
  * @return void
  */
 	public function view($id = null) {
+		$this->set('groups', $this->paginate());
+
 		$this->Group->id = $id;
 		if (!$this->Group->exists()) {
 			throw new NotFoundException(__('Invalid group'));
 		}
+		$this->Group->recursive = 1; 
 		$this->set('group', $this->Group->read(null, $id));
 	}
 

@@ -122,5 +122,4 @@ class Group extends AppModel {
 		return $results;
 
 	}
-
 }
