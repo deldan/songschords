@@ -25,6 +25,7 @@ class ArtistsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->Artist->recursive = 2;
 		$this->Artist->id = $id;
 		if (!$this->Artist->exists()) {
 			throw new NotFoundException(__('Invalid artist'));

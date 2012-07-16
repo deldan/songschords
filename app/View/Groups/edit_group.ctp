@@ -31,7 +31,7 @@
 	    					<?php echo $this->Html->link(__('Añadir bolo'), array('controller' => 'concerts', 'action' => 'createConcert')); ?>
     					<i class="icon-retweet"></i>
     						<a href="<?= $this->Html->url("/");?>groups/searchUser/<?php echo $group['Group']['id'] ?>"> Añadir gente
-    					<i class="icon-minus"></i>
+    					<i class="icon-remove"></i>
 	    					<?php echo $this->Form->postLink(__('Borrar grupo'), array('action' => 'delete', $group['Group']['id']), null, __('¿Estás seguro de que quieres eliminar al grupo %s?', $group['Group']['name'])); ?>
     				</div>
     			</td>

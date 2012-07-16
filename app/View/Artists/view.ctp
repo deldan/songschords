@@ -16,6 +16,7 @@
 			<thead>
 		    <tr>
 		      <th>Título</th>
+		      <th>Subida por</th>
 		      <th>Acciones</th>
 		    </tr>
 		  </thead>
@@ -27,27 +28,12 @@
 			foreach ($artist['Song'] as $song): ?>
 			<tr>
 				<td><?php echo $song['title'];?></td>
+				<td><?php echo $song['User']['username'];?></td>
 				<td class="actions">
-					<i class="icon-eye-open"></i><?php echo $this->Html->link(__('Ver'), array('controller' => 'songs', 'action' => 'view', $song['id'])); ?>
-					<i class="icon-edit"></i><?php echo $this->Html->link(__('Editar'), array('controller' => 'songs', 'action' => 'edit', $song['id'])); ?>
-					<i class="icon-remove"></i><?php echo $this->Form->postLink(__('Borrar'), array('controller' => 'songs', 'action' => 'delete', $song['id']), null, __('¿Estás seguro de que quieres borrar %s?', $song['title'])); ?>
+					<?php echo $this->element('actions',array('controller' => 'songs', 'view' => 'view', 'edit' => 'edit', 'delete' => 'delete', 'id' => $song['id'], 'messagedelete' => $song['title'])); ?>
 				</td>
 			</tr>
 		<?php endforeach; ?>
 		</table>
 	<?php endif; ?>
 </div>
-
-
-
-<!-- <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Artist'), array('action' => 'edit', $artist['Artist']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Artist'), array('action' => 'delete', $artist['Artist']['id']), null, __('Are you sure you want to delete # %s?', $artist['Artist']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Artists'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Artist'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Songs'), array('controller' => 'songs', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Song'), array('controller' => 'songs', 'action' => 'add')); ?> </li>
-	</ul>
-</div> -->

@@ -17,7 +17,7 @@
 	<tr>
 		<th><?php echo __('Email'); ?></th>
 		<th><?php echo __('Nombre de usuario'); ?></th>
-		<th><?php echo __('Creado'); ?></th>
+		<th><?php echo __('Miembro desde'); ?></th>
 		<th class="actions"><?php echo __('Acciones');?></th>
 	</tr>
 	<?php
@@ -28,7 +28,7 @@
 			<td><?php echo $user['username'];?></td>
 			<td><?php echo $user['created'];?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'users', 'action' => 'view', $user['id'])); ?>
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'users', 'action' => 'view', $user['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>

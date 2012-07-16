@@ -18,6 +18,7 @@
 	      <th>Título</th>
 	      <th>Artista</th>
 	      <th>Fecha de subida</th>
+	      <th>Acciones</th>
 	    </tr>
 	  </thead>
 		<?php foreach ($songs as $song): ?>
@@ -28,6 +29,11 @@
 				<?php echo $this->Html->link($song['Artist']['name'], array('controller' => 'artists', 'action' => 'view', $song['Artist']['id'])); ?>
 			</td>
 			<td><?php echo $song['Song']['created']; ?>&nbsp;</td>
+							<td class="actions">
+					<?php echo $this->Html->link('<i class="icon-eye-open"></i>',   array('controller' => 'songs', 'action' => 'view', $song['Song']['id']),array('escape' => false)); ?>
+					<?php echo $this->Html->link('<i class="icon-edit"></i>',      array('controller' => 'songs', 'action' => 'edit', $song['Song']['id']),array('escape' => false)); ?>
+					<?php echo $this->Form->postLink('<i class="icon-remove"></i>',  array('controller' => 'songs', 'action' => 'delete', $song['Song']['id']), array('escape' => false), __('¿Estás seguro de que quieres borrar %s?', $song['Song']['title'])); ?>
+				</td>
 		</tr>
 		<?php endforeach; ?>
 	</table>
