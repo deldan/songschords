@@ -2,7 +2,7 @@
 	<div class="well">
 		<ul class="nav nav-list">
 			<li>
-				<a href="<?= $this->Html->url("/");?>songs/add">
+				<a href="<?= $this->Html->url("/");?>songs/addSong">
 				  <i class="icon-plus-sign"></i>
 				  Crear Canción
 				</a>
