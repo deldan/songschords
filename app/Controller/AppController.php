@@ -39,6 +39,7 @@ class AppController extends Controller {
   public function beforeRender(){
     if($this->Auth->user()){
       $this->set('currentUser', $this->Auth->user('username'));
+      $this->set('currentUserId', $this->Auth->user('id'));
     } else {
       $this->set('currentUser', null);
     }

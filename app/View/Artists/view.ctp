@@ -19,7 +19,7 @@
 		      <th>Subida por</th>
 		      <th>Acciones</th>
 		    </tr>
-		  </thead>
+		    </thead>
 
 
 		<?php if (!empty($artist['Song'])):?>
@@ -27,13 +27,13 @@
 			$i = 0;
 			foreach ($artist['Song'] as $song): ?>
 			<tr>
-				<td><?php echo $song['title'];?></td>
+				<td><?php echo $this->Html->link($song['title'], array('controller' => 'songs', 'action' => 'view', $song['id'])); ?>
 				<td><?php echo $song['User']['username'];?></td>
 				<td class="actions">
-					<?php echo $this->element('actions',array('controller' => 'songs', 'view' => 'view', 'edit' => 'edit', 'delete' => 'delete', 'id' => $song['id'], 'messagedelete' => $song['title'])); ?>
+					<?php echo $this->element('actions',array('controller' => 'songs', 'view' => 'view', 'edit' => 'edit', 'delete' => 'delete', 'id' => $song['id'], 'messagedelete' => $song['title'], 'user_id' => $song['user_id'])); ?>
 				</td>
 			</tr>
-		<?php endforeach; ?>
+			<?php endforeach; ?>
 		</table>
-	<?php endif; ?>
+		<?php endif; ?>
 </div>
