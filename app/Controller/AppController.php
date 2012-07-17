@@ -34,7 +34,7 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 	public $helpers = array('Html','Js','Form','Session', 'TwitterBootstrap');
 	public $theme = "Bootstrap";
-	public $components = array('RequestHandler','Session', 'Auth' );
+	public $components = array('RequestHandler','Session', 'Auth');
 
   public function beforeRender(){
     if($this->Auth->user()){

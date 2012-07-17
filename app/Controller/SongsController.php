@@ -6,6 +6,7 @@ App::uses('AppController', 'Controller');
  * @property Song $Song
  */
 class SongsController extends AppController {
+
 	public $components = array('Chords');
 
 	public function addSong() {
@@ -28,44 +29,10 @@ class SongsController extends AppController {
 
 	}
 
-	private function countNotes( $linea) {
-
-    $count = 0;
-    $nota = array ('C', ' D ', 'E', 'F', 'G', 'A', 'B', 'Do', 'Re', 'Mi', 'Fa', 'Sol', 'La', 'Si', 'Do');
-
-	    foreach ($nota as $substring) {
-	    	$count += substr_count( $linea, $substring);
-	    }
-			echo "<br>";
-	    echo "Número de notas:";
-	    echo $count;
-		if ($count>"2"){
-					echo "<br>";
-					echo "Hay más notas";
-				}else{
-					echo "<br>";
-					echo "Hay más palabras";
-				}
+	public function downloadSong() {
 
 	}
 
-	public function readSong(){
-
-		$archivo = "archivo";
-		$contenido = file_get_contents($archivo);
-		$lineas = explode("\n",$contenido);
-		foreach ($lineas as $linea) {
-
-			$this->countNotes($linea);
-
-			echo "<br>";
-			echo $linea."\n";
-			echo "<br>";
-			echo "Número de palabras :";
-			echo str_word_count($linea, 0, '#');
-			echo "<br>";
-		}
-	}
 
 /**
  * index method
@@ -89,6 +56,15 @@ class SongsController extends AppController {
 			throw new NotFoundException(__('Invalid song'));
 		}
 		$this->set('song', $this->Song->read(null, $id));
+
+		$params = array(
+	        'download' => false,
+	        'name' => 'example.pdf',
+	        'paperOrientation' => 'portrait',
+	        'paperSize' => 'legal'
+	    	);
+		
+		$this->set($params);
 	}
 
 /**
