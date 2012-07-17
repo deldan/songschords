@@ -52,7 +52,7 @@ $cakeDescription = __d('cake_dev', 'Coctelsongs');
 				'vendors/raphael',
 				'vendors/jtab',
 				'vendors/backbone',
-				'vendors/jquery.validate',
+				//'vendors/jquery.validate',
 				'router',
 				'song'
 		));

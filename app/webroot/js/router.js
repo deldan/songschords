@@ -22,6 +22,7 @@ window.SongsRouter = Backbone.Router.extend({
   },
 
   song: function () {
+    song();
   },
 
   register: function () {

@@ -89,7 +89,7 @@ class UsersController extends AppController {
 		$this->paginate = array(
                               'Song' => array(
                               	'conditions' => array('user_id' => $userid),
-                                  'limit' => 1,
+                                  'limit' => 10,
                                   'order' => array('date' => 'desc')
                                 )
                               );
