@@ -56,15 +56,6 @@ class SongsController extends AppController {
 			throw new NotFoundException(__('Invalid song'));
 		}
 		$this->set('song', $this->Song->read(null, $id));
-
-		$params = array(
-	        'download' => false,
-	        'name' => 'example.pdf',
-	        'paperOrientation' => 'portrait',
-	        'paperSize' => 'legal'
-	    	);
-		
-		$this->set($params);
 	}
 
 /**
