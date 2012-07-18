@@ -9,9 +9,7 @@
 <div class="row">
 	<div class="span9 columns">
 		<div id="song">
-			<pre>
-				<?php echo $song['Song']['song']; ?>
-			</pre>
+			<pre><?php echo $song['Song']['song']; ?></pre>
 			<div id="jtab">
 			</div>
 		</div>
