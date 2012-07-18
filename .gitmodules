@@ -1,0 +1,3 @@
+[submodule "Plugin/CakePdf"]
+	path = Plugin/CakePdf
+	url = git://github.com/ceeram/CakePdf.git
