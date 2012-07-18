@@ -1,13 +1,17 @@
 <?php
+
+App::uses('CakePdf', 'CakePdf.Pdf');
 App::uses('AppController', 'Controller');
 /**
  * Songs Controller
  *
  * @property Song $Song
  */
+
 class SongsController extends AppController {
 
 	public $components = array('Chords');
+	public $pdfConfig = array('engine' => 'CakePdf.Tcpdf');
 
 	public function addSong() {
 		if ($this->request->is('post')) {
@@ -26,13 +30,7 @@ class SongsController extends AppController {
 		$users = $this->Song->User->find('list');
 		$concerts = $this->Song->Concert->find('list');
 		$this->set(compact('artists', 'users', 'concerts'));
-
 	}
-
-	public function downloadSong() {
-
-	}
-
 
 /**
  * index method
@@ -55,7 +53,7 @@ class SongsController extends AppController {
 		if (!$this->Song->exists()) {
 			throw new NotFoundException(__('Invalid song'));
 		}
-		$this->set('song', $this->Song->read(null, $id));
+		$this->set('song', $this->Song->read(null, $id));	
 	}
 
 /**

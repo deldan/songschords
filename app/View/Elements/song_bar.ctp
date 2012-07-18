@@ -14,7 +14,7 @@
 				  <i class="icon-print"></i>
 				  Imprimir canción
 				</a>
-				<a href="#">
+				<a href="<?php echo $song['Song']['id'];?>.pdf">
 				  <i class="icon-download"></i>
 				  Descargar
 				</a>
