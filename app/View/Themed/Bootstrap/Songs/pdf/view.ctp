@@ -1,3 +1,4 @@
+<h1><?php echo $song['Artist']['name']; ?></h1>
 <h1><?php echo $song['Song']['title']; ?></h1>
 
 <pre>
