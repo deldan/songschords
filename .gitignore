@@ -1,8 +1,8 @@
+app/Config/database.php
 app/tmp/cache/*
 app/tmp/logs/*
 app/tmp/sessions/*
 app/tmp/tests/*
-app/Config/database.php
 # OS generated files #
 ######################
 .profile
