@@ -8,17 +8,17 @@
 
 <div class="span8 columns well">
 	<div class="page-header">
-		<h1>Mis últimas Canciones</h1>
+		<h1><?php echo __('Mis últimas Canciones:');?></h1>
 	</div>
 
 	<table class="table table-condensed">
 		<thead>
 	    <tr>
 	      <th>#</th>
-	      <th>Título</th>
-	      <th>Artista</th>
-	      <th>Fecha de subida</th>
-	      <th>Acciones</th>
+	      <th><?php echo __('Título:');?></th>
+	      <th><?php echo __('Artista:');?></th>
+	      <th><?php echo __('Fecha de subida:');?></th>
+	      <th><?php echo __('Acciones:');?></th>
 	    </tr>
 	  </thead>
 		<?php foreach ($songs as $song): ?>

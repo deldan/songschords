@@ -20,8 +20,10 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-App::uses('Controller', 'Controller');
+$lang='esp';  
+Configure::write('Config.language', $lang);  
 
+App::uses('Controller', 'Controller');
 /**
  * Application Controller
  *
@@ -32,11 +34,14 @@ App::uses('Controller', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	public $helpers = array('Html','Js','Form','Session', 'TwitterBootstrap');
+	public $helpers = array('Html','Js','Form','Session','TwitterBootstrap');
 	public $theme = "Bootstrap";
-	public $components = array('RequestHandler','Session', 'Auth');
+	public $components = array('RequestHandler','Session','Auth','Cookie');
 
   public function beforeRender(){
+    $idioma = $this->Cookie->read('lang');  
+    $this->set('idioma',$idioma);  
+
     if($this->Auth->user()){
       $this->set('currentUser', $this->Auth->user('username'));
       $this->set('currentUserId', $this->Auth->user('id'));
@@ -45,4 +50,35 @@ class AppController extends Controller {
     }
   }
 
+  function beforeFilter() {  
+    $this->_setLanguage();  
+  }   
+  
+  function _setLanguage() {  
+    if ($this->Cookie->read('lang') && !$this->Session->check('Config.language')) {
+        $this->Session->write('Config.language', $this->Cookie->read('lang'));
+    }
+    else if (isset($this->params['language']) && ($this->params['language']
+             !=  $this->Session->read('Config.language'))) {     
+
+        $this->Session->write('Config.language', $this->params['language']);
+        $this->Cookie->write('lang', $this->params['language'], false, '20 days');
+    }
+    else if (!isset($this->params['language']) AND $this->Session->read('Config.language')  == null)
+    {
+  $this->Session->write('Config.language', 'esp');
+    }
+  }
+
+  function languageswitch($idioma){  
+    $content ="";  
+    if($idioma == 'esp'){  
+        $content .= $this->Html->link(__("English",true), array('language'=>'eng'));  
+    }else if($idioma == 'eng'){  
+        $content .= $this->Html->link(__("English",true), array('language'=>'esp'));  
+    }else{  
+        $content .= $this->Html->link(__("English",true), array('language'=>'eng'));  
+    }  
+    return $content;  
+  } 
 }

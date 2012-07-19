@@ -36,7 +36,14 @@
 	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
 	Router::connect('/nuevapassword', array('controller' => 'users', 'action' => 'resetUserPassword'));
 
+//extensión para CakePDF
 	Router::parseExtensions('pdf');
+
+//Para localizacion
+	Router::connect('/:language/:controller/:action/*',  
+	                       array(),  
+	                       array('language' => '[a-z]{3}'));  
+
 
 /**
  * Load all plugin routes.  See the CakePlugin documentation on

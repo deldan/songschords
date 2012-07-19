@@ -1,0 +1,968 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /Artists/add.ctp:4
+msgid "Add Artist"
+msgstr ""
+
+#: /Artists/add.ctp:9
+#: /Artists/admin_add.ctp:9
+#: /Artists/admin_edit.ctp:10
+#: /Artists/edit.ctp:10
+#: /Concerts/add.ctp:12
+#: /Concerts/admin_add.ctp:12
+#: /Concerts/admin_edit.ctp:13
+#: /Concerts/create_concert.ctp:37
+#: /Concerts/edit.ctp:13
+#: /Groups/add.ctp:9
+#: /Groups/admin_add.ctp:10
+#: /Groups/admin_edit.ctp:11
+#: /Groups/edit.ctp:11
+#: /Songs/add_song.ctp:19
+#: /Songs/admin_add.ctp:13
+#: /Songs/admin_edit.ctp:14
+#: /Songs/edit.ctp:19
+#: /Users/add.ctp:12
+#: /Users/admin_add.ctp:12
+#: /Users/admin_edit.ctp:13
+#: /Users/edit.ctp:13
+msgid "Submit"
+msgstr ""
+
+#: /Artists/add.ctp:12
+#: /Artists/admin_add.ctp:12
+#: /Artists/admin_edit.ctp:13
+#: /Artists/admin_index.ctp:9;42
+#: /Artists/admin_view.ctp:27;49
+#: /Artists/edit.ctp:13
+#: /Artists/index.ctp:9;42
+#: /Concerts/add.ctp:15
+#: /Concerts/admin_add.ctp:15
+#: /Concerts/admin_edit.ctp:16
+#: /Concerts/admin_index.ctp:11;48
+#: /Concerts/admin_view.ctp:37;61
+#: /Concerts/edit.ctp:16
+#: /Concerts/index.ctp:11
+#: /Concerts/view.ctp:37;61
+#: /Groups/admin_add.ctp:13
+#: /Groups/admin_edit.ctp:14
+#: /Groups/admin_index.ctp:9;42
+#: /Groups/admin_view.ctp:27;50;89
+#: /Groups/edit.ctp:14
+#: /Groups/index.ctp:9;42
+#: /Groups/view.ctp:56
+#: /Songs/admin_add.ctp:16
+#: /Songs/admin_edit.ctp:17
+#: /Songs/admin_index.ctp:12;52
+#: /Songs/admin_view.ctp:42;67
+#: /Songs/edit.ctp:22
+#: /Songs/index.ctp:12;52
+#: /Users/add.ctp:15
+#: /Users/admin_add.ctp:15
+#: /Users/admin_edit.ctp:16
+#: /Users/admin_index.ctp:11;46
+#: /Users/admin_view.ctp:37;61;99
+#: /Users/edit.ctp:16
+#: /Users/index.ctp:11;46
+#: /Users/view.ctp:37;61;99
+msgid "Actions"
+msgstr ""
+
+#: /Artists/add.ctp:15
+#: /Artists/admin_add.ctp:15
+#: /Artists/admin_edit.ctp:17
+#: /Artists/admin_view.ctp:31
+#: /Artists/edit.ctp:17
+#: /Songs/admin_add.ctp:20
+#: /Songs/admin_edit.ctp:22
+#: /Songs/admin_index.ctp:55
+#: /Songs/admin_view.ctp:48
+#: /Songs/index.ctp:55
+msgid "List Artists"
+msgstr ""
+
+#: /Artists/add.ctp:16
+#: /Artists/admin_add.ctp:16
+#: /Artists/admin_edit.ctp:18
+#: /Artists/admin_index.ctp:45
+#: /Artists/admin_view.ctp:33
+#: /Artists/edit.ctp:18
+#: /Artists/index.ctp:45
+#: /Concerts/add.ctp:21
+#: /Concerts/admin_add.ctp:21
+#: /Concerts/admin_edit.ctp:23
+#: /Concerts/admin_index.ctp:53
+#: /Concerts/admin_view.ctp:45
+#: /Concerts/edit.ctp:23
+#: /Concerts/view.ctp:45
+#: /Songs/admin_add.ctp:19
+#: /Songs/admin_edit.ctp:21
+#: /Songs/admin_view.ctp:46
+#: /Users/add.ctp:19
+#: /Users/admin_add.ctp:19
+#: /Users/admin_edit.ctp:21
+#: /Users/admin_index.ctp:49
+#: /Users/admin_view.ctp:43
+#: /Users/edit.ctp:21
+#: /Users/index.ctp:49
+#: /Users/view.ctp:43
+msgid "List Songs"
+msgstr ""
+
+#: /Artists/add.ctp:17
+#: /Artists/admin_add.ctp:17
+#: /Artists/admin_edit.ctp:19
+#: /Artists/admin_index.ctp:46
+#: /Artists/admin_view.ctp:34;74
+#: /Artists/edit.ctp:19
+#: /Artists/index.ctp:46
+#: /Concerts/add.ctp:22
+#: /Concerts/admin_add.ctp:22
+#: /Concerts/admin_edit.ctp:24
+#: /Concerts/admin_index.ctp:54
+#: /Concerts/admin_view.ctp:46;86
+#: /Concerts/edit.ctp:24
+#: /Concerts/view.ctp:46;86
+#: /Songs/admin_index.ctp:54
+#: /Songs/admin_view.ctp:47
+#: /Songs/index.ctp:54
+#: /Users/add.ctp:20
+#: /Users/admin_add.ctp:20
+#: /Users/admin_edit.ctp:22
+#: /Users/admin_index.ctp:50
+#: /Users/admin_view.ctp:44;86
+#: /Users/edit.ctp:22
+#: /Users/index.ctp:50
+#: /Users/view.ctp:44;86
+msgid "New Song"
+msgstr ""
+
+#: /Artists/admin_add.ctp:4
+msgid "Admin Add Artist"
+msgstr ""
+
+#: /Artists/admin_edit.ctp:4
+msgid "Admin Edit Artist"
+msgstr ""
+
+#: /Artists/admin_edit.ctp:16
+#: /Artists/admin_index.ctp:21
+#: /Artists/admin_view.ctp:65
+#: /Artists/edit.ctp:16
+#: /Artists/index.ctp:21
+#: /Concerts/admin_edit.ctp:19
+#: /Concerts/admin_index.ctp:27
+#: /Concerts/admin_view.ctp:77
+#: /Concerts/edit.ctp:19
+#: /Concerts/index.ctp:27
+#: /Groups/admin_edit.ctp:17
+#: /Groups/admin_index.ctp:21
+#: /Groups/admin_view.ctp:65;104
+#: /Groups/edit.ctp:17
+#: /Groups/index.ctp:21
+#: /Groups/view.ctp:71
+#: /Songs/admin_edit.ctp:20
+#: /Songs/admin_index.ctp:31
+#: /Songs/admin_view.ctp:82
+#: /Songs/index.ctp:31
+#: /Users/admin_edit.ctp:19
+#: /Users/admin_index.ctp:25
+#: /Users/admin_view.ctp:77;112
+#: /Users/edit.ctp:19
+#: /Users/index.ctp:25
+msgid "Delete"
+msgstr ""
+
+#: /Artists/admin_edit.ctp:16
+#: /Artists/admin_index.ctp:21
+#: /Artists/admin_view.ctp:30;65
+#: /Artists/edit.ctp:16
+#: /Artists/index.ctp:21
+#: /Concerts/admin_edit.ctp:19
+#: /Concerts/admin_index.ctp:27
+#: /Concerts/admin_view.ctp:40;77
+#: /Concerts/edit.ctp:19
+#: /Concerts/index.ctp:27
+#: /Concerts/view.ctp:40
+#: /Groups/admin_edit.ctp:17
+#: /Groups/admin_index.ctp:21
+#: /Groups/admin_view.ctp:30;65;104
+#: /Groups/edit.ctp:17
+#: /Groups/index.ctp:21
+#: /Groups/view.ctp:71
+#: /Songs/admin_edit.ctp:20
+#: /Songs/admin_index.ctp:31
+#: /Songs/admin_view.ctp:45;82
+#: /Songs/index.ctp:31
+#: /Users/admin_edit.ctp:19
+#: /Users/admin_index.ctp:25
+#: /Users/admin_view.ctp:40;77;112
+#: /Users/edit.ctp:19
+#: /Users/index.ctp:25
+#: /Users/view.ctp:40
+msgid "Are you sure you want to delete # %s?"
+msgstr ""
+
+#: /Artists/admin_index.ctp:2
+#: /Artists/index.ctp:2
+msgid "Artists"
+msgstr ""
+
+#: /Artists/admin_index.ctp:19
+#: /Artists/admin_view.ctp:63
+#: /Artists/index.ctp:19
+#: /Concerts/admin_index.ctp:25
+#: /Concerts/admin_view.ctp:75
+#: /Concerts/index.ctp:25
+#: /Groups/admin_index.ctp:19
+#: /Groups/admin_view.ctp:63;102
+#: /Groups/index.ctp:19
+#: /Groups/view.ctp:69
+#: /Songs/admin_index.ctp:29
+#: /Songs/admin_view.ctp:80
+#: /Songs/index.ctp:29
+#: /Users/admin_index.ctp:23
+#: /Users/admin_view.ctp:75;110
+#: /Users/index.ctp:23
+msgid "View"
+msgstr ""
+
+#: /Artists/admin_index.ctp:20
+#: /Artists/admin_view.ctp:64
+#: /Artists/index.ctp:20
+#: /Concerts/admin_index.ctp:26
+#: /Concerts/admin_view.ctp:76
+#: /Concerts/index.ctp:26
+#: /Groups/admin_index.ctp:20
+#: /Groups/admin_view.ctp:64;103
+#: /Groups/index.ctp:20
+#: /Groups/view.ctp:70
+#: /Songs/admin_index.ctp:30
+#: /Songs/admin_view.ctp:81
+#: /Songs/index.ctp:30
+#: /Users/admin_index.ctp:24
+#: /Users/admin_view.ctp:76;111
+#: /Users/index.ctp:24
+msgid "Edit"
+msgstr ""
+
+#: /Artists/admin_index.ctp:29
+#: /Artists/index.ctp:29
+#: /Concerts/admin_index.ctp:35
+#: /Concerts/index.ctp:35
+#: /Groups/admin_index.ctp:29
+#: /Groups/index.ctp:29
+#: /Songs/admin_index.ctp:39
+#: /Songs/index.ctp:39
+#: /Users/admin_index.ctp:33
+#: /Users/index.ctp:33
+msgid "Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}"
+msgstr ""
+
+#: /Artists/admin_index.ctp:35
+#: /Artists/index.ctp:35
+#: /Concerts/admin_index.ctp:41
+#: /Concerts/index.ctp:41
+#: /Groups/admin_index.ctp:35
+#: /Groups/index.ctp:35
+#: /Songs/admin_index.ctp:45
+#: /Songs/index.ctp:45
+#: /Users/admin_index.ctp:39
+#: /Users/index.ctp:39
+msgid "previous"
+msgstr ""
+
+#: /Artists/admin_index.ctp:37
+#: /Artists/index.ctp:37
+#: /Concerts/admin_index.ctp:43
+#: /Concerts/index.ctp:43
+#: /Groups/admin_index.ctp:37
+#: /Groups/index.ctp:37
+#: /Songs/admin_index.ctp:47
+#: /Songs/index.ctp:47
+#: /Users/admin_index.ctp:41
+#: /Users/index.ctp:41
+msgid "next"
+msgstr ""
+
+#: /Artists/admin_index.ctp:44
+#: /Artists/admin_view.ctp:32
+#: /Artists/index.ctp:44
+#: /Songs/admin_add.ctp:21
+#: /Songs/admin_edit.ctp:23
+#: /Songs/admin_index.ctp:56
+#: /Songs/admin_view.ctp:49
+#: /Songs/index.ctp:56
+msgid "New Artist"
+msgstr ""
+
+#: /Artists/admin_view.ctp:2
+#: /Songs/admin_view.ctp:9
+msgid "Artist"
+msgstr ""
+
+#: /Artists/admin_view.ctp:4;42
+#: /Concerts/admin_view.ctp:4;54
+#: /Concerts/view.ctp:4;54
+#: /Groups/admin_view.ctp:4;44;83
+#: /Groups/view.ctp:50
+#: /Songs/admin_view.ctp:4;61
+#: /Users/admin_view.ctp:4;54;95
+#: /Users/view.ctp:4;54;95
+msgid "Id"
+msgstr ""
+
+#: /Artists/admin_view.ctp:9
+#: /Concerts/admin_view.ctp:14
+#: /Concerts/view.ctp:14
+#: /Groups/admin_view.ctp:9;46
+#: /Groups/view.ctp:52
+#: /Songs/admin_view.ctp:63
+#: /Users/admin_view.ctp:96
+#: /Users/view.ctp:96
+msgid "Name"
+msgstr ""
+
+#: /Artists/admin_view.ctp:14;47
+#: /Concerts/admin_view.ctp:24;59
+#: /Concerts/view.ctp:24;59
+#: /Groups/admin_view.ctp:14;48;87
+#: /Groups/view.ctp:54
+#: /Songs/admin_view.ctp:29;65
+#: /Users/admin_view.ctp:24;59;97
+#: /Users/view.ctp:24;59;97
+msgid "Created"
+msgstr ""
+
+#: /Artists/admin_view.ctp:19;48
+#: /Concerts/admin_view.ctp:29;60
+#: /Concerts/view.ctp:29;60
+#: /Groups/admin_view.ctp:19;49;88
+#: /Groups/view.ctp:55
+#: /Songs/admin_view.ctp:34;66
+#: /Users/admin_view.ctp:29;60;98
+#: /Users/view.ctp:29;60;98
+msgid "Modified"
+msgstr ""
+
+#: /Artists/admin_view.ctp:29
+#: /Artists/edit.ctp:4
+msgid "Edit Artist"
+msgstr ""
+
+#: /Artists/admin_view.ctp:30
+msgid "Delete Artist"
+msgstr ""
+
+#: /Artists/admin_view.ctp:38
+#: /Concerts/admin_view.ctp:50
+#: /Concerts/view.ctp:50
+#: /Users/admin_view.ctp:50
+#: /Users/view.ctp:50
+msgid "Related Songs"
+msgstr ""
+
+#: /Artists/admin_view.ctp:43
+#: /Concerts/admin_view.ctp:55
+#: /Concerts/view.ctp:55
+#: /Users/admin_view.ctp:55
+#: /Users/view.ctp:55
+msgid "Artist Id"
+msgstr ""
+
+#: /Artists/admin_view.ctp:44
+#: /Concerts/admin_view.ctp:56
+#: /Concerts/view.ctp:56
+#: /Users/admin_view.ctp:56
+#: /Users/view.ctp:56
+msgid "User Id"
+msgstr ""
+
+#: /Artists/admin_view.ctp:45
+#: /Concerts/admin_view.ctp:57
+#: /Concerts/view.ctp:57
+#: /Songs/admin_view.ctp:19
+#: /Users/admin_view.ctp:57
+#: /Users/view.ctp:57
+msgid "Title"
+msgstr ""
+
+#: /Artists/admin_view.ctp:46
+#: /Concerts/admin_view.ctp:58
+#: /Concerts/view.ctp:58
+#: /Songs/admin_view.ctp:2;24
+#: /Users/admin_view.ctp:58
+#: /Users/view.ctp:58
+msgid "Song"
+msgstr ""
+
+#: /Concerts/add.ctp:4
+msgid "Add Concert"
+msgstr ""
+
+#: /Concerts/add.ctp:18
+#: /Concerts/admin_add.ctp:18
+#: /Concerts/admin_edit.ctp:20
+#: /Concerts/admin_view.ctp:41
+#: /Concerts/edit.ctp:20
+#: /Concerts/view.ctp:41
+#: /Groups/admin_add.ctp:17
+#: /Groups/admin_edit.ctp:19
+#: /Groups/admin_index.ctp:45
+#: /Groups/admin_view.ctp:33
+#: /Groups/edit.ctp:19
+#: /Groups/index.ctp:45
+#: /Songs/admin_add.ctp:24
+#: /Songs/admin_edit.ctp:26
+#: /Songs/admin_index.ctp:59
+#: /Songs/admin_view.ctp:52
+#: /Songs/index.ctp:59
+msgid "List Concerts"
+msgstr ""
+
+#: /Concerts/add.ctp:19
+#: /Concerts/admin_add.ctp:19
+#: /Concerts/admin_edit.ctp:21
+#: /Concerts/admin_index.ctp:51
+#: /Concerts/admin_view.ctp:43
+#: /Concerts/edit.ctp:21
+#: /Concerts/view.ctp:43
+#: /Groups/admin_add.ctp:16
+#: /Groups/admin_edit.ctp:18
+#: /Groups/admin_view.ctp:31
+#: /Groups/edit.ctp:18
+#: /Users/add.ctp:21
+#: /Users/admin_add.ctp:21
+#: /Users/admin_edit.ctp:23
+#: /Users/admin_index.ctp:51
+#: /Users/admin_view.ctp:45
+#: /Users/edit.ctp:23
+#: /Users/index.ctp:51
+#: /Users/view.ctp:45
+msgid "List Groups"
+msgstr ""
+
+#: /Concerts/add.ctp:20
+#: /Concerts/admin_add.ctp:20
+#: /Concerts/admin_edit.ctp:22
+#: /Concerts/admin_index.ctp:52
+#: /Concerts/admin_view.ctp:44
+#: /Concerts/edit.ctp:22
+#: /Concerts/view.ctp:44
+#: /Groups/admin_index.ctp:44
+#: /Groups/admin_view.ctp:32
+#: /Groups/index.ctp:44
+#: /Users/add.ctp:22
+#: /Users/admin_add.ctp:22
+#: /Users/admin_edit.ctp:24
+#: /Users/admin_index.ctp:52
+#: /Users/admin_view.ctp:46;121
+#: /Users/edit.ctp:24
+#: /Users/index.ctp:52
+#: /Users/view.ctp:46;121
+msgid "New Group"
+msgstr ""
+
+#: /Concerts/admin_add.ctp:4
+msgid "Admin Add Concert"
+msgstr ""
+
+#: /Concerts/admin_edit.ctp:4
+msgid "Admin Edit Concert"
+msgstr ""
+
+#: /Concerts/admin_index.ctp:2
+#: /Concerts/index.ctp:2
+msgid "Concerts"
+msgstr ""
+
+#: /Concerts/admin_index.ctp:50
+#: /Concerts/admin_view.ctp:42
+#: /Concerts/view.ctp:42
+#: /Groups/admin_add.ctp:18
+#: /Groups/admin_edit.ctp:20
+#: /Groups/admin_index.ctp:46
+#: /Groups/admin_view.ctp:34;74
+#: /Groups/edit.ctp:20
+#: /Groups/index.ctp:46
+#: /Songs/admin_add.ctp:25
+#: /Songs/admin_edit.ctp:27
+#: /Songs/admin_index.ctp:60
+#: /Songs/admin_view.ctp:53;91
+#: /Songs/index.ctp:60
+msgid "New Concert"
+msgstr ""
+
+#: /Concerts/admin_view.ctp:2
+#: /Concerts/view.ctp:2
+msgid "Concert"
+msgstr ""
+
+#: /Concerts/admin_view.ctp:9
+#: /Concerts/view.ctp:9
+#: /Groups/admin_view.ctp:2
+msgid "Group"
+msgstr ""
+
+#: /Concerts/admin_view.ctp:19
+#: /Concerts/view.ctp:19
+#: /Groups/admin_view.ctp:47
+#: /Groups/view.ctp:53
+#: /Songs/admin_view.ctp:64
+msgid "Data"
+msgstr ""
+
+#: /Concerts/admin_view.ctp:39
+#: /Concerts/edit.ctp:4
+#: /Concerts/view.ctp:39
+msgid "Edit Concert"
+msgstr ""
+
+#: /Concerts/admin_view.ctp:40
+#: /Concerts/view.ctp:40
+msgid "Delete Concert"
+msgstr ""
+
+#: /Concerts/create_concert.ctp:13
+msgid "Agregar concierto"
+msgstr "Add concert"
+
+#: /Concerts/create_concert.ctp:32
+msgid "Nombre del concierto"
+msgstr "Concert's name"
+
+#: /Concerts/create_concert.ctp:33
+msgid "Nombre del fecha"
+msgstr "Date"
+
+#: /Concerts/create_concert.ctp:34
+#: /Themed/Bootstrap/Elements/menu/top_menu.ctp:19
+msgid "Canciones"
+msgstr "Songs"
+
+#: /Concerts/view.ctp:75
+#: /Groups/view.ctp:31
+#: /Users/view.ctp:75;110
+msgid "Ver"
+msgstr "View"
+
+#: /Concerts/view.ctp:76
+#: /Users/view.ctp:76;111
+msgid "Editar"
+msgstr "Edit"
+
+#: /Concerts/view.ctp:77
+#: /Users/view.ctp:77;112
+msgid "Borrar"
+msgstr "Delete"
+
+#: /Concerts/view.ctp:77
+#: /Users/view.ctp:77;112
+msgid "¿Estás seguro de que quieres borrar # %s?"
+msgstr "Do you want to delete # %s?"
+
+#: /Elements/actions.ctp:6
+msgid "¿Estás seguro de que quieres borrar %s?"
+msgstr "Do you want to delete %s?"
+
+#: /Elements/song_bar.ctp:7
+msgid "Subir tono"
+msgstr "Raise a tone"
+
+#: /Elements/song_bar.ctp:11
+msgid "Bajar tono"
+msgstr "Lower a tone"
+
+#: /Elements/song_bar.ctp:15
+msgid "Imprimir canción"
+msgstr "Print song"
+
+#: /Elements/song_bar.ctp:19
+msgid "Descargar"
+msgstr "Download"
+
+#: /Elements/song_bar.ctp:23
+msgid "Guardar como favorito"
+msgstr "Favourite"
+
+#: /Elements/user_bar.ctp:7
+msgid "Crear Canción"
+msgstr "Add song"
+
+#: /Elements/user_bar.ctp:11
+msgid "Crear Grupo"
+msgstr "Add group"
+
+#: /Elements/user_bar.ctp:15
+msgid "Crear Bolo"
+msgstr "Add concert"
+
+#: /Elements/user_bar.ctp:19
+msgid "Gestionar Grupos"
+msgstr "Edit group"
+
+#: /Elements/user_bar.ctp:23
+msgid "Gestionar Bolos"
+msgstr "Edit concerts"
+
+#: /Groups/add.ctp:4
+msgid "Add Group"
+msgstr ""
+
+#: /Groups/admin_add.ctp:4
+msgid "Admin Add Group"
+msgstr ""
+
+#: /Groups/admin_add.ctp:19
+#: /Groups/admin_edit.ctp:21
+#: /Groups/admin_index.ctp:47
+#: /Groups/admin_view.ctp:35
+#: /Groups/edit.ctp:21
+#: /Groups/index.ctp:47
+#: /Songs/admin_add.ctp:22
+#: /Songs/admin_edit.ctp:24
+#: /Songs/admin_index.ctp:57
+#: /Songs/admin_view.ctp:50
+#: /Songs/index.ctp:57
+#: /Users/add.ctp:18
+#: /Users/admin_add.ctp:18
+#: /Users/admin_edit.ctp:20
+#: /Users/admin_view.ctp:41
+#: /Users/edit.ctp:20
+#: /Users/view.ctp:41
+msgid "List Users"
+msgstr ""
+
+#: /Groups/admin_add.ctp:20
+#: /Groups/admin_edit.ctp:22
+#: /Groups/admin_index.ctp:48
+#: /Groups/admin_view.ctp:36;113
+#: /Groups/edit.ctp:22
+#: /Groups/index.ctp:48
+#: /Songs/admin_add.ctp:23
+#: /Songs/admin_edit.ctp:25
+#: /Songs/admin_index.ctp:58
+#: /Songs/admin_view.ctp:51
+#: /Songs/index.ctp:58
+#: /Users/admin_index.ctp:48
+#: /Users/admin_view.ctp:42
+#: /Users/index.ctp:48
+#: /Users/view.ctp:42
+msgid "New User"
+msgstr ""
+
+#: /Groups/admin_edit.ctp:4
+msgid "Admin Edit Group"
+msgstr ""
+
+#: /Groups/admin_index.ctp:2
+#: /Groups/index.ctp:2
+msgid "Groups"
+msgstr ""
+
+#: /Groups/admin_view.ctp:29
+#: /Groups/edit.ctp:4
+msgid "Edit Group"
+msgstr ""
+
+#: /Groups/admin_view.ctp:30
+msgid "Delete Group"
+msgstr ""
+
+#: /Groups/admin_view.ctp:40
+#: /Songs/admin_view.ctp:57
+msgid "Related Concerts"
+msgstr ""
+
+#: /Groups/admin_view.ctp:45
+#: /Groups/view.ctp:51
+#: /Songs/admin_view.ctp:62
+msgid "Group Id"
+msgstr ""
+
+#: /Groups/admin_view.ctp:79
+msgid "Related Users"
+msgstr ""
+
+#: /Groups/admin_view.ctp:84
+#: /Groups/search_user.ctp:15
+#: /Groups/view.ctp:18
+#: /Users/admin_view.ctp:9
+#: /Users/register.ctp:6
+#: /Users/reset_user_password.ctp:6
+#: /Users/view.ctp:9
+msgid "Email"
+msgstr ""
+
+#: /Groups/admin_view.ctp:85
+#: /Users/admin_view.ctp:14
+#: /Users/view.ctp:14
+msgid "Username"
+msgstr ""
+
+#: /Groups/admin_view.ctp:86
+#: /Users/admin_view.ctp:19
+#: /Users/view.ctp:19
+msgid "Password"
+msgstr ""
+
+#: /Groups/create_group.ctp:12;18
+msgid "Crear grupo"
+msgstr "Add group"
+
+#: /Groups/create_group.ctp:14
+msgid "Nombre del grupo"
+msgstr "Group's name"
+
+#: /Groups/edit_group.ctp:31
+msgid "Añadir bolo"
+msgstr "Add concert"
+
+#: /Groups/edit_group.ctp:33
+msgid "Añadir gente"
+msgstr "Add members"
+
+#: /Groups/edit_group.ctp:35
+msgid "Borrar grupo"
+msgstr "Delete group"
+
+#: /Groups/edit_group.ctp:35
+msgid "¿Estás seguro de que quieres eliminar al grupo %s?"
+msgstr "Do you want to delete the group %s?"
+
+#: /Groups/search_user.ctp:13
+msgid "Añadir usuario"
+msgstr "Add user"
+
+#: /Groups/search_user.ctp:20
+msgid "Añadir"
+msgstr "Add"
+
+#: /Groups/view.ctp:14
+msgid "Componentes del grupo"
+msgstr "Group members"
+
+#: /Groups/view.ctp:19
+msgid "Nombre de usuario"
+msgstr "User name"
+
+#: /Groups/view.ctp:20
+msgid "Miembro desde"
+msgstr "Member since"
+
+#: /Groups/view.ctp:21
+msgid "Acciones"
+msgstr "Actions"
+
+#: /Groups/view.ctp:41
+msgid "Añadir miembro"
+msgstr "Add member"
+
+#: /Groups/view.ctp:46
+msgid "Conciertos"
+msgstr "Concerts"
+
+#: /Groups/view.ctp:80
+msgid "Nuevo concierto"
+msgstr "New concert"
+
+#: /Songs/add_song.ctp:12
+msgid "Añade una canción"
+msgstr "Add song"
+
+#: /Songs/add_song.ctp:14
+msgid "Artista"
+msgstr "Artist"
+
+#: /Songs/add_song.ctp:15
+#: /Songs/edit.ctp:15
+msgid "Título"
+msgstr "Title"
+
+#: /Songs/add_song.ctp:16
+msgid "Letra de la canción"
+msgstr "Lyrics"
+
+#: /Songs/admin_add.ctp:4
+msgid "Admin Add Song"
+msgstr ""
+
+#: /Songs/admin_edit.ctp:4
+msgid "Admin Edit Song"
+msgstr ""
+
+#: /Songs/admin_index.ctp:2
+#: /Songs/index.ctp:2
+msgid "Songs"
+msgstr "Canciones"
+
+#: /Songs/admin_view.ctp:14
+#: /Users/admin_view.ctp:2
+#: /Users/view.ctp:2
+msgid "User"
+msgstr "Usuario"
+
+#: /Songs/admin_view.ctp:44
+msgid "Edit Song"
+msgstr ""
+
+#: /Songs/admin_view.ctp:45
+msgid "Delete Song"
+msgstr ""
+
+#: /Songs/edit.ctp:12
+msgid "Editar canción"
+msgstr "Edit song"
+
+#: /Songs/edit.ctp:16
+msgid "Letra"
+msgstr "Lyrics"
+
+#: /Songs/view.ctp:17
+msgid "Comentarios"
+msgstr "Comments"
+
+#: /Songs/view.ctp:56
+msgid "Comentario:"
+msgstr "Comment:"
+
+#: /Songs/view.ctp:62
+msgid "Comentar"
+msgstr "Comment"
+
+#: /Songs/view.ctp:63
+msgid "Cancelar"
+msgstr "Cancel"
+
+#: /Themed/Bootstrap/Elements/menu/top_menu.ctp:23
+msgid "Registrarse"
+msgstr "Register"
+
+#: /Themed/Bootstrap/Elements/menu/top_menu.ctp:29
+msgid "Logout"
+msgstr ""
+
+#: /Themed/Bootstrap/Elements/menu/top_menu.ctp:31
+msgid "Loguearse"
+msgstr "Log In"
+
+#: /Themed/Bootstrap/Elements/menu/top_menu.ctp:36
+msgid "Buscar"
+msgstr "Search"
+
+#: /Users/add.ctp:4
+msgid "Add User"
+msgstr ""
+
+#: /Users/admin_add.ctp:4
+msgid "Admin Add User"
+msgstr ""
+
+#: /Users/admin_edit.ctp:4
+msgid "Admin Edit User"
+msgstr ""
+
+#: /Users/admin_index.ctp:2
+#: /Users/index.ctp:2
+msgid "Users"
+msgstr ""
+
+#: /Users/admin_view.ctp:39
+#: /Users/edit.ctp:4
+#: /Users/view.ctp:39
+msgid "Edit User"
+msgstr ""
+
+#: /Users/admin_view.ctp:40
+#: /Users/view.ctp:40
+msgid "Delete User"
+msgstr ""
+
+#: /Users/admin_view.ctp:91
+#: /Users/view.ctp:91
+msgid "Related Groups"
+msgstr ""
+
+#: /Users/login.ctp:4;11
+msgid "Login"
+msgstr ""
+
+#: /Users/login.ctp:6
+#: /Users/register.ctp:7
+msgid "Usuario"
+msgstr "User"
+
+#: /Users/login.ctp:7
+#: /Users/register.ctp:8
+msgid "Contraseña"
+msgstr "Password"
+
+#: /Users/login.ctp:12
+msgid "He olvidado mi contraseña"
+msgstr "Forgot password?"
+
+#: /Users/profile.ctp:11
+msgid "Mis últimas Canciones:"
+msgstr "My last songs"
+
+#: /Users/profile.ctp:18
+msgid "Título:"
+msgstr "Title:"
+
+#: /Users/profile.ctp:19
+msgid "Artista:"
+msgstr "Artist"
+
+#: /Users/profile.ctp:20
+msgid "Fecha de subida:"
+msgstr "Submission date"
+
+#: /Users/profile.ctp:21
+msgid "Acciones:"
+msgstr "Actions"
+
+#: /Users/register.ctp:4;14
+msgid "Registrar"
+msgstr "Register"
+
+#: /Users/register.ctp:9
+msgid "Repetir contraseña"
+msgstr "Repeat the password"
+
+#: /Users/reset_user_password.ctp:4
+msgid "Recordar Contraseña"
+msgstr "Remember my password"
+
+#: /Users/reset_user_password.ctp:10
+msgid "Recuperar contraseña"
+msgstr "Recover my password"
+
+#: /Errors/error400.ctp:21
+#: /Errors/error500.ctp:21
+msgid "Error"
+msgstr ""
+
+#: /Errors/error400.ctp:23
+msgid "The requested address %s was not found on this server."
+msgstr ""
+
+#: /Errors/error500.ctp:22
+msgid "An Internal Error Has Occurred."
+msgstr ""
+
+#: /Layouts/default.ctp:19
+msgid "CakePHP: the rapid development php framework"
+msgstr ""
+
+#: /Themed/Bootstrap/Layouts/default.ctp:19
+msgid "Coctelsongs"
+msgstr ""
+

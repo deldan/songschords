@@ -1,8 +1,8 @@
 <?php
-
 	$current_page = $this->params['action'];
-
 ?>
+
+
 
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
@@ -16,26 +16,34 @@
 			<div class="nav-collapse">
 				<ul class="nav">
 					<li <?php if($current_page=="songs"){echo'class="active"';} ?>>
-						<?php echo $this->Html->link('Canciones', array('controller' => 'app', 'action' => 'songs')); ?>
+						<?php echo $this->Html->link(__('Canciones'), array('controller' => 'app', 'action' => 'songs')); ?>
 					</li>
 					<? if(!$currentUser): ?>
 					<li <?php if($current_page=="registro"){echo'class="active"';} ?>>
-						<?php echo $this->Html->link('Registrarse', '/registro'); ?>
+						<?php echo $this->Html->link(__('Registrarse'), '/registro'); ?>
 					</li>
 					<? endif;?>
 					<li<?php if($current_page=="loguin"){echo'class="active"';} ?>>
 						<a href="<?= $this->Html->url("/");?>users/profile"><?= $currentUser; ?></a>
 						<li>
-							<? if($currentUser): ?> <a href="<?= $this->Html->url("/");?>users/logout">Logout</a></li>
+							<? if($currentUser): ?> <a href="<?= $this->Html->url("/");?>users/logout"><?php echo __('Logout');?></a></li>
 						<? else : ?>
-							<?php echo $this->Html->link('Loguearse', '/login'); ?>
+							<?php echo $this->Html->link(__('Loguearse'), '/login'); ?>
 						<? endif;?>
 					</li>
+					<li><? echo $this->Html->link($this->Html->image("esp-flag.png"), 
+						array('language'=>'esp'),
+						array('escape' => false) );?></li>
+					<li><? echo $this->Html->link($this->Html->image("eng-flag.png"), 
+						array('language'=>'eng'),
+						array('escape' => false) );?></li>
 				</ul>
 				<form class="navbar-search pull-left" action="">
-		            <input type="text" class="search-query span2" placeholder="Buscar canciones" x-webkit-speech="">
+		            <input type="text" class="search-query span2" placeholder=<?php echo __('Buscar');?> x-webkit-speech="">
 		        </form>
 			</div>
 		</div>
+		<ul class="right">
+		</ul>
 	</div>
 </div>

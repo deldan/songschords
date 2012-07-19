@@ -9,7 +9,7 @@
 	</fieldset>
 	<div class="form-actions">
 	    <button type="submit" class="btn btn-primary"><? echo __('Login');?></button>
-	    <?php $linktext = "He olvidado mi contraseña"; ?>
+	    <?php $linktext = __('He olvidado mi contraseña'); ?>
 		<?php echo $this->Html->link($linktext, '/nuevapassword',array('id' => 'forgetpasswordlink'));
 	?>
     </div>

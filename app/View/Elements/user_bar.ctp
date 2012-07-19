@@ -4,23 +4,23 @@
 			<li>
 				<a href="<?= $this->Html->url("/");?>songs/addSong">
 				  <i class="icon-plus-sign"></i>
-				  Crear Canción
+				  <?php echo __('Crear Canción');?>
 				</a>
 				<a href="<?= $this->Html->url("/");?>groups/createGroup">
 				  <i class="icon-plus-sign"></i>
-				  Crear Grupo
+				  <?php echo __('Crear Grupo');?>
 				</a>
 				<a href="<?= $this->Html->url("/");?>concerts/createConcert">
 				  <i class="icon-plus-sign"></i>
-				  Crear Bolo
+				  <?php echo __('Crear Bolo');?>
 				</a>
 				<a href="<?= $this->Html->url("/");?>groups/editGroup">
 				  <i class="icon-th-list"></i>
-				  Gestionar Grupos
+				  <?php echo __('Gestionar Grupos');?>
 				</a>
 				<a href="#"  id="print">
 				  <i class="icon-th-list"></i>
-				  Gestionar Bolos
+				  <?php echo __('Gestionar Bolos');?>
 				</a>
 			</li>
 		</ul>

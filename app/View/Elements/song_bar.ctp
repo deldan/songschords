@@ -4,23 +4,23 @@
 			<li>
 				<a href="#" id="plus">
 				  <i class="icon-plus"></i>
-				  Subir tono
+				  <?php echo __('Subir tono');?>
 				</a>
 				<a href="#" id="minus">
 				  <i class="icon-minus"></i>
-				  Bajar tono
+				  <?php echo __('Bajar tono');?>
 				</a>
 				<a href="#"  id="print">
 				  <i class="icon-print"></i>
-				  Imprimir canción
+				  <?php echo __('Imprimir canción');?>
 				</a>
 				<a href="<?php echo $song['Song']['id'];?>.pdf">
 				  <i class="icon-download"></i>
-				  Descargar
+				  <?php echo __('Descargar');?>
 				</a>
 				<a href="#" id="favorite">
 				  <i class="icon-star-empty"></i>
-				  Guardar como favorito
+				  <?php echo __('Guardar como favorito');?>
 				</a>
 			</li>
 		</ul>

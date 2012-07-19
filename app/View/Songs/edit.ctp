@@ -12,8 +12,8 @@
 		<legend><?php echo __('Editar canción'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('title',array('label'=>'Título'));
-		echo $this->Form->input('song',array('label'=>'Letra'));
+		echo $this->Form->input('title',array('label'=>__('Título')));
+		echo $this->Form->input('song',array('label'=>__('Letra')));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

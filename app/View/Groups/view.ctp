@@ -38,7 +38,7 @@
 	<div class="actions">
 		<ul>
 			<li>
-    			<a href="<?= $this->Html->url("/");?>groups/searchUser/<?php echo $group['Group']['id'] ?>"> Añadir miembro</a>
+    			<a href="<?= $this->Html->url("/");?>groups/searchUser/<?php echo $group['Group']['id'] ?>"> <?php echo __('Añadir miembro');?></a>
     		</li>
 		</ul>
 	</div>

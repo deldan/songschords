@@ -11,9 +11,9 @@
 	<fieldset>
 		<legend><?php echo __('Añade una canción'); ?></legend>
 	<?php
-		echo $this->Form->input('artist_id',array('label'=>'Artista'));
-		echo $this->Form->input('title',array('label'=>'Título'));
-		echo $this->Form->input('song',array('label'=>'Letra de la canción'));
+		echo $this->Form->input('artist_id',array('label'=>__('Artista')));
+		echo $this->Form->input('title',array('label'=>__('Título')));
+		echo $this->Form->input('song',array('label'=>__('Letra de la canción')));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

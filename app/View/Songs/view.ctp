@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<section class="page-header">
-			<h1>Comentarios</h1>
+			<h1><?php echo __('Comentarios');?></h1>
 		</section>
 		<div id="comments">
 			<div class="well">
@@ -53,14 +53,14 @@
 			  <fieldset>
 			    <legend>Comentar</legend>
 			    <div class="control-group">
-		            <label class="control-label" for="textarea">Comentario:</label>
+		            <label class="control-label" for="textarea"><?php echo __('Comentario:');?></label>
 		            <div class="controls">
 		              <textarea class="input-xlarge" id="textarea" rows="3"></textarea>
 		            </div>
 		        </div>
 		        <div class="form-actions">
-		            <button type="submit" class="btn btn-primary">Comentar</button>
-		            <button class="btn">Cancelar</button>
+		            <button type="submit" class="btn btn-primary"><?php echo __('Comentar');?></button>
+		            <button class="btn"><?php echo __('Cancelar');?></button>
 		        </div>
 			  </fieldset>
 			</form>
