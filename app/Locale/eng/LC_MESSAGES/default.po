@@ -1,13 +1,14 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2011-11-15 11:06+0100\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: /Artists/add.ctp:4
 msgid "Add Artist"
@@ -566,11 +567,11 @@ msgstr "Delete"
 
 #: /Concerts/view.ctp:77
 #: /Users/view.ctp:77;112
-msgid "¿Estás seguro de que quieres borrar # %s?"
+msgid "Â¿EstÃ¡s seguro de que quieres borrar # %s?"
 msgstr "Do you want to delete # %s?"
 
 #: /Elements/actions.ctp:6
-msgid "¿Estás seguro de que quieres borrar %s?"
+msgid "Â¿EstÃ¡s seguro de que quieres borrar %s?"
 msgstr "Do you want to delete %s?"
 
 #: /Elements/song_bar.ctp:7
@@ -582,7 +583,7 @@ msgid "Bajar tono"
 msgstr "Lower a tone"
 
 #: /Elements/song_bar.ctp:15
-msgid "Imprimir canción"
+msgid "Imprimir canciÃ³n"
 msgstr "Print song"
 
 #: /Elements/song_bar.ctp:19
@@ -594,7 +595,7 @@ msgid "Guardar como favorito"
 msgstr "Favourite"
 
 #: /Elements/user_bar.ctp:7
-msgid "Crear Canción"
+msgid "Crear CanciÃ³n"
 msgstr "Add song"
 
 #: /Elements/user_bar.ctp:11
@@ -723,11 +724,11 @@ msgid "Nombre del grupo"
 msgstr "Group's name"
 
 #: /Groups/edit_group.ctp:31
-msgid "Añadir bolo"
+msgid "AÃ±adir bolo"
 msgstr "Add concert"
 
 #: /Groups/edit_group.ctp:33
-msgid "Añadir gente"
+msgid "AÃ±adir gente"
 msgstr "Add members"
 
 #: /Groups/edit_group.ctp:35
@@ -735,15 +736,15 @@ msgid "Borrar grupo"
 msgstr "Delete group"
 
 #: /Groups/edit_group.ctp:35
-msgid "¿Estás seguro de que quieres eliminar al grupo %s?"
+msgid "Â¿EstÃ¡s seguro de que quieres eliminar al grupo %s?"
 msgstr "Do you want to delete the group %s?"
 
 #: /Groups/search_user.ctp:13
-msgid "Añadir usuario"
+msgid "AÃ±adir usuario"
 msgstr "Add user"
 
 #: /Groups/search_user.ctp:20
-msgid "Añadir"
+msgid "AÃ±adir"
 msgstr "Add"
 
 #: /Groups/view.ctp:14
@@ -763,7 +764,7 @@ msgid "Acciones"
 msgstr "Actions"
 
 #: /Groups/view.ctp:41
-msgid "Añadir miembro"
+msgid "AÃ±adir miembro"
 msgstr "Add member"
 
 #: /Groups/view.ctp:46
@@ -775,7 +776,7 @@ msgid "Nuevo concierto"
 msgstr "New concert"
 
 #: /Songs/add_song.ctp:12
-msgid "Añade una canción"
+msgid "AÃ±ade una canciÃ³n"
 msgstr "Add song"
 
 #: /Songs/add_song.ctp:14
@@ -784,11 +785,11 @@ msgstr "Artist"
 
 #: /Songs/add_song.ctp:15
 #: /Songs/edit.ctp:15
-msgid "Título"
+msgid "TÃ­tulo"
 msgstr "Title"
 
 #: /Songs/add_song.ctp:16
-msgid "Letra de la canción"
+msgid "Letra de la canciÃ³n"
 msgstr "Lyrics"
 
 #: /Songs/admin_add.ctp:4
@@ -819,7 +820,7 @@ msgid "Delete Song"
 msgstr ""
 
 #: /Songs/edit.ctp:12
-msgid "Editar canción"
+msgid "Editar canciÃ³n"
 msgstr "Edit song"
 
 #: /Songs/edit.ctp:16
@@ -902,19 +903,19 @@ msgstr "User"
 
 #: /Users/login.ctp:7
 #: /Users/register.ctp:8
-msgid "Contraseña"
+msgid "ContraseÃ±a"
 msgstr "Password"
 
 #: /Users/login.ctp:12
-msgid "He olvidado mi contraseña"
+msgid "He olvidado mi contraseÃ±a"
 msgstr "Forgot password?"
 
 #: /Users/profile.ctp:11
-msgid "Mis últimas Canciones:"
+msgid "Mis Ãºltimas Canciones:"
 msgstr "My last songs"
 
 #: /Users/profile.ctp:18
-msgid "Título:"
+msgid "TÃ­tulo:"
 msgstr "Title:"
 
 #: /Users/profile.ctp:19
@@ -934,15 +935,15 @@ msgid "Registrar"
 msgstr "Register"
 
 #: /Users/register.ctp:9
-msgid "Repetir contraseña"
+msgid "Repetir contraseÃ±a"
 msgstr "Repeat the password"
 
 #: /Users/reset_user_password.ctp:4
-msgid "Recordar Contraseña"
+msgid "Recordar ContraseÃ±a"
 msgstr "Remember my password"
 
 #: /Users/reset_user_password.ctp:10
-msgid "Recuperar contraseña"
+msgid "Recuperar contraseÃ±a"
 msgstr "Recover my password"
 
 #: /Errors/error400.ctp:21
