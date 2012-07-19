@@ -90,6 +90,7 @@ $cakeDescription = __d('cake_dev', 'Coctelsongs');
 songs 2012
 	</footer><!-- /container -->
 
-	<?php echo $this->element('sql_dump'); ?>
+	<?php //echo $this->element('sql_dump'); 
+	?>
 </body>
 </html>

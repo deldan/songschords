@@ -42,9 +42,11 @@
 	Router::mapResources('backbones');
 
 //Para localizacion
-	Router::connect('/:language/:controller/:action/*',  
-	                       array(),  
-	                       array('language' => '[a-z]{3}'));  
+	Router::connect(
+	    '/:language/:controller/:action/:id',
+	    array(),
+	    array('id' => '[0-9]+', 'language' => '[a-z]{3}', 'persist' => array('language'))
+	);
 
 
 /**
@@ -53,7 +55,7 @@
  */
 	CakePlugin::routes();
 
-	
+
 /**
  * Load the CakePHP default routes. Remove this if you do not want to use
  * the built-in default routes.

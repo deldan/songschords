@@ -36,7 +36,7 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 	public $helpers = array('Html','Js','Form','Session','TwitterBootstrap');
 	public $theme = "Bootstrap";
-	public $components = array('RequestHandler','Session','Auth','Cookie');
+	public $components = array('RequestHandler','Session','Auth','Cookie','DebugKit.Toolbar');
 
   public function beforeRender(){
     $idioma = $this->Cookie->read('lang');  
