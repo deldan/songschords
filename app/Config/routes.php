@@ -38,6 +38,8 @@
 
 //extensión para CakePDF
 	Router::parseExtensions('pdf');
+	Router::parseExtensions('json');
+	Router::mapResources('backbones');
 
 //Para localizacion
 	Router::connect('/:language/:controller/:action/*',  

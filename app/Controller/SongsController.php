@@ -56,6 +56,18 @@ class SongsController extends AppController {
 		$this->set('song', $this->Song->read(null, $id));	
 	}
 
+	public function backbone($id = 1) {
+		$this->Song->id = $id;
+		if (!$this->Song->exists()) {
+			throw new NotFoundException(__('Invalid song'));
+		}
+		$song = $this->Song->read(null, $id);
+		$cancion['name'] = $song['Song']['title'];
+		$cancion['song'] = $song['Song']['song'];
+		$this->set('song', $cancion);
+		$this->set('_serialize', 'song');
+	}
+
 /**
  * add method
  *
