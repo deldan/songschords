@@ -23,6 +23,9 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
+setlocale(LC_ALL, 'es_ES.utf8');
+date_default_timezone_set('Europe/Madrid');
+
 /**
  * Cache Engine Configuration
  * Default settings provided below

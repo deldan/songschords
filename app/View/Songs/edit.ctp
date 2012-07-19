@@ -13,7 +13,7 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('title',array('label'=>__('Título')));
-		echo $this->Form->input('song',array('label'=>__('Letra')));
+		echo $this->Form->input('song',array('style'=>'width:550px; height:350px;', 'label'=>__('Letra')));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

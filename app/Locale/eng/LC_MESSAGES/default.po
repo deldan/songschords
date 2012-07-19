@@ -608,7 +608,7 @@ msgstr "Add concert"
 
 #: /Elements/user_bar.ctp:19
 msgid "Gestionar Grupos"
-msgstr "Edit group"
+msgstr "Edit groups"
 
 #: /Elements/user_bar.ctp:23
 msgid "Gestionar Bolos"
@@ -912,7 +912,7 @@ msgstr "Forgot password?"
 
 #: /Users/profile.ctp:11
 msgid "Mis últimas Canciones:"
-msgstr "My last songs"
+msgstr "My last Songs"
 
 #: /Users/profile.ctp:18
 msgid "Título:"
