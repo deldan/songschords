@@ -44,6 +44,25 @@ class Song extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
+	//hasmany comentarios
+	public $hasMany = array(
+		'Comment' => array(
+			'className' => 'Comment',
+			'foreignKey' => 'song_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+	);
+
+
+
 /**
  * belongsTo associations
  *
@@ -63,7 +82,7 @@ class Song extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)
+		),
 	);
 
 /**

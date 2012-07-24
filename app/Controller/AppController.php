@@ -49,10 +49,6 @@ class AppController extends Controller {
       $this->set('currentUser', null);
     }
   }
-
-  function beforeFilter() {  
-    $this->_setLanguage();  
-  }   
   
   function _setLanguage() {  
     if ($this->Cookie->read('lang') && !$this->Session->check('Config.language')) {
@@ -69,6 +65,10 @@ class AppController extends Controller {
   $this->Session->write('Config.language', 'esp');
     }
   }
+
+  function beforeFilter() {  
+    $this->_setLanguage();  
+  }   
 
   function languageswitch($idioma){  
     $content ="";  

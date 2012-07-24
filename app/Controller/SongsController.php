@@ -49,11 +49,14 @@ class SongsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->Song->recursive = 2;
 		$this->Song->id = $id;
 		if (!$this->Song->exists()) {
 			throw new NotFoundException(__('Invalid song'));
 		}
 		$this->set('song', $this->Song->read(null, $id));	
+		$comentarios = $this->Song->Comment->find('all', array('order' => array('Comment.id DESC')));
+		$this->set('comentarios', $comentarios);	
 	}
 
 	public function backbone($id = 1) {

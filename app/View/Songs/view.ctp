@@ -17,7 +17,9 @@
 			<h1><?php echo __('Comentarios');?></h1>
 		</section>
 		<div id="comments">
-			<div class="well">
+		    <?php foreach ($comentarios as $comentario): ?>
+
+		    <div class="well">
 				<div class="row">
 				  <div class="span1">
 				  	<a href="#" class="thumbnail">
@@ -26,41 +28,26 @@
 				</div>
 				<div class="span5">
 				<blockquote>
-					La canción me ha gustado, donde puedo conseguir el mp3?
-					<small>deldan</small>
+					<?php echo $comentario['Comment']['body']; ?>
+					<small><?php echo $comentario['User']['username']; ?></small>
 				</blockquote>
 				</div>
 				</div>
 			</div>
-			<div class="well">
-			 	<div class="row">
-				  <div class="span1">
-				  	<a href="#" class="thumbnail">
-				      	<img src="<?php echo $this->Html->url("/");?>img/user.png" alt="user">
-				    </a>
-				</div>
-				<div class="span5">
-				<blockquote>
-					Los acordes están mal puestos porfavor revisarlos
-					<small>yises</small>
-				</blockquote>
-				</div>
-				</div>
-			</div>
+		    <?php endforeach; ?>
 		</div>
 		<div id="comment">
-			<form class="form-horizontal">
+			<?php echo $this->Form->create('Comment', array('action' => 'addComment')); ?>
 			  <fieldset>
-			    <legend>Comentar</legend>
+			    <legend>Add Comment</legend>
 			    <div class="control-group">
-		            <label class="control-label" for="textarea"><?php echo __('Comentario:');?></label>
 		            <div class="controls">
-		              <textarea class="input-xlarge" id="textarea" rows="3"></textarea>
+		              <?php	echo $this->Form->input('body', array('rows' => '3'));?>
+		              <?php	echo $this->Form->input('song_id', array('value' => $song['Song']['id'], 'type' => 'hidden'));?>
 		            </div>
 		        </div>
 		        <div class="form-actions">
-		            <button type="submit" class="btn btn-primary"><?php echo __('Comentar');?></button>
-		            <button class="btn"><?php echo __('Cancelar');?></button>
+		            <?php	echo $this->Form->end('Save Comment'); ?>
 		        </div>
 			  </fieldset>
 			</form>
