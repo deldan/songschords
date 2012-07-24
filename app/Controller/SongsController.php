@@ -55,8 +55,7 @@ class SongsController extends AppController {
 			throw new NotFoundException(__('Invalid song'));
 		}
 		$this->set('song', $this->Song->read(null, $id));	
-		$comentarios = $this->Song->Comment->find('all', array('conditions' => array('Comment.song_id' => $this->Song->id), 
-													 	 array('order' => array('Comment.id DESC'))));
+		$comentarios = $this->Song->Comment->find('all', array('conditions' => array('Comment.song_id' => $this->Song->id),'order' => array('Comment.id DESC')));
 		$this->set('comentarios', $comentarios);	
 	}
 
