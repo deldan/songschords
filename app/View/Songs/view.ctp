@@ -18,12 +18,11 @@
 		</section>
 		<div id="comments">
 		    <?php foreach ($comentarios as $comentario): ?>
-
 		    <div class="well">
 				<div class="row">
 				  <div class="span1">
 				  	<a href="#" class="thumbnail">
-				      	<img src="<?php echo $this->Html->url("/");?>img/user.png" alt="user">
+				      	<?php echo $this->Gravatar->image($comentario['User']['email'], array('size' => 60));?>
 				    </a>
 				</div>
 				<div class="span5">
