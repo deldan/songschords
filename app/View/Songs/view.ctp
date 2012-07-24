@@ -22,7 +22,7 @@
 				<div class="row">
 				  <div class="span1">
 				  	<a href="#" class="thumbnail">
-				      	<?php echo $this->Gravatar->image($comentario['User']['email'], array('size' => 60));?>
+				      	<?php echo $this->Gravatar->image($comentario['User']['email'], array('size' => 50));?>
 				    </a>
 				</div>
 				<div class="span5">
