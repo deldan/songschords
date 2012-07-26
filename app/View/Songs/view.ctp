@@ -38,15 +38,15 @@
 		<div id="comment">
 			<?php echo $this->Form->create('Comment', array('action' => 'addComment')); ?>
 			  <fieldset>
-			    <legend>Add Comment</legend>
+			    <legend><?php echo __('Add Comment');?></legend>
 			    <div class="control-group">
 		            <div class="controls">
-		              <?php	echo $this->Form->input('body', array('rows' => '3'));?>
+		              <?php	echo $this->Form->input('body', array('label'=>__('Text'), 'rows' => '3'));?>
 		              <?php	echo $this->Form->input('song_id', array('value' => $song['Song']['id'], 'type' => 'hidden'));?>
 		            </div>
 		        </div>
 		        <div class="form-actions">
-		            <?php	echo $this->Form->end('Save Comment'); ?>
+		            <?php	echo $this->Form->end(__('Save Comment')); ?>
 		        </div>
 			  </fieldset>
 			</form>

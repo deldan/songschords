@@ -831,6 +831,18 @@ msgstr ""
 msgid "Comentarios"
 msgstr ""
 
+#: /Songs/view.ctp:41
+msgid "Add Comment"
+msgstr "Añadir comentario"
+
+#: /Songs/view.ctp:44
+msgid "Text"
+msgstr "Texto"
+
+#: /Songs/view.ctp:56
+msgid "Save Comment"
+msgstr "Enviar"
+
 #: /Songs/view.ctp:56
 msgid "Comentario:"
 msgstr ""
