@@ -121,5 +121,4 @@ window.song = function () {
 	allChords();
 	favorite();
 	printSong();
-	console.log('pepe');
 };

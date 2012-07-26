@@ -14,6 +14,24 @@ class SongsController extends AppController {
 	public $pdfConfig = array('engine' => 'CakePdf.Tcpdf');
 
 
+	public function searchSong() {
+		Configure::write('debug', 0);
+
+		$query = $this->params->query['query'];
+		$names = $this->Song->find('all', array('conditions' => array('Song.title LIKE' => '%'.$query.'%'), 'fields' => array('Song.title')));
+		
+		
+		foreach ($names as $name) {
+		    $results[] = $name["Song"]["title"];
+		}
+
+		$response = array(
+                 'suggestions' => $results,
+                 'query'	   => $query,
+                );
+	    $this->layout = '';
+	    $this->set('response', $response);
+	}
 	
 	public function addSong($artistId = null,$artistName = null) {
 		if ($this->request->is('post')) {

@@ -25,8 +25,6 @@ class ArtistsController extends AppController {
                 );
 	    $this->layout = '';
 	    $this->set('response', $response);
-
-
 	}
 
 /**
