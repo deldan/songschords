@@ -8,6 +8,27 @@ App::uses('AppController', 'Controller');
 class ArtistsController extends AppController {
 
 
+	public function searchArtist() {
+		Configure::write('debug', 0);
+
+		$query = $this->params->query['query'];
+		$names = $this->Artist->find('all', array('conditions' => array('Artist.name LIKE' => '%'.$query.'%'), 'fields' => array('Artist.name')));
+		
+		
+		foreach ($names as $name) {
+		    $results[] = $name["Artist"]["name"];
+		}
+
+		$response = array(
+                 'suggestions' => $results,
+                 'query'	   => $query,
+                );
+	    $this->layout = '';
+	    $this->set('response', $response);
+
+
+	}
+
 /**
  * index method
  *

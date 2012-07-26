@@ -52,8 +52,10 @@ $cakeDescription = __d('cake_dev', 'Coctelsongs');
 				'vendors/raphael',
 				'vendors/jtab',
 				'vendors/backbone',
+				'vendors/jquery.autocomplete',
 				//'vendors/jquery.validate',
 				'router',
+				'addsong',
 				'song'
 		));
 		echo $this->fetch('script');?>
