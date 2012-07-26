@@ -32,10 +32,11 @@
 						<? endif;?>
 					</li>
 					<li>
-						<? echo $this->Html->link($this->Html->image("esp-flag.png"), 
+						<? echo $this->Html->link($this->Html->image("esp-flag.png"),
 						array('language'=>'esp'),
 						array('escape' => false) );?></li>
-					<li><? echo $this->Html->link($this->Html->image("eng-flag.png"), 
+					<li>
+						<? echo $this->Html->link($this->Html->image("eng-flag.png"),
 						array('language'=>'eng'),
 						array('escape' => false) );?></li>
 				</ul>

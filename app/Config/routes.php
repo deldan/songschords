@@ -31,7 +31,7 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 	Router::connect('/canciones', array('controller' => 'songs', 'action' => 'index'));
-	Router::connect('/cancion/*', array('controller' => 'songs', 'action' => 'view'));
+	//Router::connect('/cancion/*', array('controller' => 'songs', 'action' => 'view'));
 	Router::connect('/registro', array('controller' => 'users', 'action' => 'register'));
 	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
 	Router::connect('/nuevapassword', array('controller' => 'users', 'action' => 'resetUserPassword'));
@@ -43,15 +43,21 @@
 
 //Para localizacion
 	/*Router::connect(
-	    '/:language/:controller/:action/:id',
+	    '/:lang/:controller/:action/:id',
 	    array(),
-	    array('id' => '[0-9]+', 'language' => '[a-z]{3}', 'persist' => array('language'))
+	    array('lang' => '[a-z]{3}','id' => '[0-9]+',  'persist' => array('lang'))
 	);*/
 	Router::connect(
+		'/:language/:controller/:action/*',
+        array(),
+        array('language' => '[a-z]{3}')
+    );
+
+	/*Router::connect(
 	    '/:language/:controller/:action/*',
 	    array(),
 	    array('language' => '[a-z]{3}')
-	);
+	);*/
 
 
 /**
