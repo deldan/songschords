@@ -20,8 +20,8 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-$lang='esp';  
-Configure::write('Config.language', $lang);  
+$lang='esp';
+Configure::write('Config.language', $lang);
 
 App::uses('Controller', 'Controller');
 /**
@@ -39,8 +39,8 @@ class AppController extends Controller {
 	public $components = array('RequestHandler','Session','Auth','Cookie','DebugKit.Toolbar');
 
   public function beforeRender(){
-    $idioma = $this->Cookie->read('lang');  
-    $this->set('idioma',$idioma);  
+    $idioma = $this->Cookie->read('lang');
+    $this->set('idioma',$idioma);
 
     if($this->Auth->user()){
       $this->set('currentUser', $this->Auth->user('username'));
@@ -49,13 +49,13 @@ class AppController extends Controller {
       $this->set('currentUser', null);
     }
   }
-  
-  function _setLanguage() {  
+
+  /*function _setLanguage() {
     if ($this->Cookie->read('lang') && !$this->Session->check('Config.language')) {
         $this->Session->write('Config.language', $this->Cookie->read('lang'));
     }
     else if (isset($this->params['language']) && ($this->params['language']
-             !=  $this->Session->read('Config.language'))) {     
+             !=  $this->Session->read('Config.language'))) {
 
         $this->Session->write('Config.language', $this->params['language']);
         $this->Cookie->write('lang', $this->params['language'], false, '20 days');
@@ -64,21 +64,26 @@ class AppController extends Controller {
     {
   $this->Session->write('Config.language', 'esp');
     }
+  }*/
+
+
+  function _setLanguage() {
+
+      if ($this->Cookie->read('lang') && !$this->Session->check('Config.language')) {
+          $this->Session->write('Config.language', $this->Cookie->read('lang'));
+      }
+      else if (isset($this->params['language']) && ($this->params['language']
+               !=  $this->Session->read('Config.language'))) {
+
+          $this->Session->write('Config.language', $this->params['language']);
+          $this->Cookie->write('lang', $this->params['language'], false, '20 days');
+      }
   }
 
-  function beforeFilter() {  
-    $this->_setLanguage();  
-  }   
 
-  function languageswitch($idioma){  
-    $content ="";  
-    if($idioma == 'esp'){  
-        $content .= $this->Html->link(__("English",true), array('language'=>'eng'));  
-    }else if($idioma == 'eng'){  
-        $content .= $this->Html->link(__("English",true), array('language'=>'esp'));  
-    }else{  
-        $content .= $this->Html->link(__("English",true), array('language'=>'eng'));  
-    }  
-    return $content;  
-  } 
+  function beforeFilter() {
+    $this->_setLanguage();
+  }
+
+
 }
