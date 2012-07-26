@@ -38,7 +38,7 @@ class ArtistsController extends AppController {
  *
  * @return void
  */
-	/*public function add() {
+	public function add($artistName = null) {
 		if ($this->request->is('post')) {
 			$this->Artist->create();
 			if ($this->Artist->save($this->request->data)) {
@@ -48,7 +48,7 @@ class ArtistsController extends AppController {
 				$this->Session->setFlash(__('The artist could not be saved. Please, try again.'));
 			}
 		}
-	}*/
+	}
 
 /**
  * edit method

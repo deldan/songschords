@@ -13,12 +13,17 @@ class SongsController extends AppController {
 	public $components = array('Chords');
 	public $pdfConfig = array('engine' => 'CakePdf.Tcpdf');
 
-	public function addSong() {
+
+	
+	public function addSong($artistId = null,$artistName = null) {
 		if ($this->request->is('post')) {
 			$this->Song->create();
 			$this->request->data['Song']['user_id'] = $this->Auth->user('id');
 
 			$this->request->data['Song']['song'] = $this->Chords->searchChords($this->request->data['Song']['song']);
+
+			$this->request->data['Song']['artist_id'] = $this->addArtist($this->request->data['Song']['name']);
+
 			if ($this->Song->save($this->request->data)) {
 				$this->Session->setFlash(__('The song has been saved'));
 				$this->redirect(array('action' => 'index'));
@@ -31,6 +36,23 @@ class SongsController extends AppController {
 		$concerts = $this->Song->Concert->find('list');
 		$this->set(compact('artists', 'users', 'concerts'));
 	}
+
+	private function addArtist($nameArtist = null){
+		$idArtist = null;
+		$this->loadModel('Artist');
+		$artist = $this->Artist->find('first',array('conditions'=> array('Artist.name =' => $this->request->data['Song']['name'])));
+			
+		if(!empty($artist)){
+			$idArtist = $artist['Artist']['id'];
+		} else {
+			$artistAdd['Artist']['name'] = $nameArtist;
+
+			$this->Artist->create();
+			$this->Artist->save($artistAdd); 
+			$idArtist = $this->Artist->getLastInsertID();
+		}
+		return $idArtist;
+	}	
 
 /**
  * index method

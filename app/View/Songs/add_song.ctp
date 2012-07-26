@@ -11,11 +11,10 @@
 	<fieldset>
 		<legend><?php echo __('Añade una canción'); ?></legend>
 	<?php
-		echo $this->Form->input('artist_id',array('label'=>__('Artista')));
+		echo $this->Form->input('name',array('label'=>__('Artista')));
 		echo $this->Form->input('title',array('label'=>__('Título')));
-		echo $this->Form->input('song',array('label'=>__('Letra de la canción')));
+		echo $this->Form->input('song',array('style'=>'width:450px; height:350px;', 'label'=>__('Letra')));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>
 </div>
-
