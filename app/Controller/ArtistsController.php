@@ -13,8 +13,7 @@ class ArtistsController extends AppController {
 
 		$query = $this->params->query['query'];
 		$names = $this->Artist->find('all', array('conditions' => array('Artist.name LIKE' => '%'.$query.'%'), 'fields' => array('Artist.name')));
-		
-		
+
 		foreach ($names as $name) {
 		    $results[] = $name["Artist"]["name"];
 		}

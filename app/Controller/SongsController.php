@@ -19,8 +19,7 @@ class SongsController extends AppController {
 
 		$query = $this->params->query['query'];
 		$names = $this->Song->find('all', array('conditions' => array('Song.title LIKE' => '%'.$query.'%'), 'fields' => array('Song.title')));
-		
-		
+
 		foreach ($names as $name) {
 		    $results[] = $name["Song"]["title"];
 		}
@@ -32,7 +31,7 @@ class SongsController extends AppController {
 	    $this->layout = '';
 	    $this->set('response', $response);
 	}
-	
+
 	public function addSong($artistId = null,$artistName = null) {
 		if ($this->request->is('post')) {
 			$this->Song->create();
@@ -45,7 +44,7 @@ class SongsController extends AppController {
 			if ($this->Song->save($this->request->data)) {
 				$this->Session->setFlash(__('The song has been saved'));
 				$songId = $this->Song->getLastInsertID();
-				$this->redirect('/cancion/'.$songId);
+				$this->redirect('/cancion/confirm_song/'.$songId);
 			} else {
 				$this->Session->setFlash(__('The song could not be saved. Please, try again.'));
 			}
@@ -56,22 +55,34 @@ class SongsController extends AppController {
 		$this->set(compact('artists', 'users', 'concerts'));
 	}
 
+	public function confirmSong($id = null) {
+		$this->Song->recursive = 2;
+		$this->Song->id = $id;
+		if (!$this->Song->exists()) {
+			throw new NotFoundException(__('Invalid song'));
+		}
+		$this->set('song', $this->Song->read(null, $id));
+		$comentarios = $this->Song->Comment->find('all', array('conditions' => array('Comment.song_id' => $this->Song->id),
+															   'order'      => array('Comment.id DESC')));
+		$this->set('comentarios', $comentarios);
+	}
+
 	private function addArtist($nameArtist = null){
 		$idArtist = null;
 		$this->loadModel('Artist');
 		$artist = $this->Artist->find('first',array('conditions'=> array('Artist.name =' => $this->request->data['Song']['name'])));
-			
+
 		if(!empty($artist)){
 			$idArtist = $artist['Artist']['id'];
 		} else {
 			$artistAdd['Artist']['name'] = $nameArtist;
 
 			$this->Artist->create();
-			$this->Artist->save($artistAdd); 
+			$this->Artist->save($artistAdd);
 			$idArtist = $this->Artist->getLastInsertID();
 		}
 		return $idArtist;
-	}	
+	}
 
 /**
  * index method
@@ -95,10 +106,10 @@ class SongsController extends AppController {
 		if (!$this->Song->exists()) {
 			throw new NotFoundException(__('Invalid song'));
 		}
-		$this->set('song', $this->Song->read(null, $id));	
+		$this->set('song', $this->Song->read(null, $id));
 		$comentarios = $this->Song->Comment->find('all', array('conditions' => array('Comment.song_id' => $this->Song->id),
 															   'order'      => array('Comment.id DESC')));
-		$this->set('comentarios', $comentarios);	
+		$this->set('comentarios', $comentarios);
 	}
 
 	public function backbone($id = 1) {
@@ -118,21 +129,21 @@ class SongsController extends AppController {
  *
  * @return void
  */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->Song->create();
-			if ($this->Song->save($this->request->data)) {
-				$this->Session->setFlash(__('The song has been saved'));
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The song could not be saved. Please, try again.'));
-			}
-		}
-		$artists = $this->Song->Artist->find('list');
-		$users = $this->Song->User->find('list');
-		$concerts = $this->Song->Concert->find('list');
-		$this->set(compact('artists', 'users', 'concerts'));
-	}
+	// public function add() {
+	// 	if ($this->request->is('post')) {
+	// 		$this->Song->create();
+	// 		if ($this->Song->save($this->request->data)) {
+	// 			$this->Session->setFlash(__('The song has been saved'));
+	// 			$this->redirect(array('action' => 'index'));
+	// 		} else {
+	// 			$this->Session->setFlash(__('The song could not be saved. Please, try again.'));
+	// 		}
+	// 	}
+	// 	$artists = $this->Song->Artist->find('list');
+	// 	$users = $this->Song->User->find('list');
+	// 	$concerts = $this->Song->Concert->find('list');
+	// 	$this->set(compact('artists', 'users', 'concerts'));
+	// }
 
 /**
  * edit method
@@ -142,11 +153,15 @@ class SongsController extends AppController {
  */
 	public function edit($id = null) {
 		$this->Song->id = $id;
+
 		if (!$this->Song->exists()) {
 			throw new NotFoundException(__('Invalid song'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->Song->save($this->request->data)) {
+
+				$this->request->data['Song']['song'] = $this->Chords->searchChords($this->request->data['Song']['song']);
+
+				if ($this->Song->save($this->request->data)) {
 				$this->Session->setFlash(__('The song has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -154,7 +169,12 @@ class SongsController extends AppController {
 			}
 		} else {
 			$this->request->data = $this->Song->read(null, $id);
+
+			$cadena_a_renombrar = array("<a>", "</a>");
+			$cancion_sin_formato = str_replace($cadena_a_renombrar, "", $this->Song->data['Song']['song']);
+			$this->set('song', $cancion_sin_formato);
 		}
+
 		$artists = $this->Song->Artist->find('list');
 		$users = $this->Song->User->find('list');
 		$concerts = $this->Song->Concert->find('list');
@@ -167,7 +187,7 @@ class SongsController extends AppController {
  * @param string $id
  * @return void
  */
-	/*public function delete($id = null) {
+	public function delete($id = null) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
@@ -177,12 +197,12 @@ class SongsController extends AppController {
 		}
 		if ($this->Song->delete()) {
 			$this->Session->setFlash(__('Song deleted'));
-			$this->redirect(array('action' => 'index'));
+			$this->redirect('/users/profile/');
 		}
 		$this->Session->setFlash(__('Song was not deleted'));
 		$this->redirect(array('action' => 'index'));
-	}*/
-/**
+	}
+	/**
  * admin_index method
  *
  * @return void
