@@ -163,13 +163,12 @@ class SongsController extends AppController {
 
 				if ($this->Song->save($this->request->data)) {
 				$this->Session->setFlash(__('The song has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect('/users/profile/');
 			} else {
 				$this->Session->setFlash(__('The song could not be saved. Please, try again.'));
 			}
 		} else {
 			$this->request->data = $this->Song->read(null, $id);
-
 			$cadena_a_renombrar = array("<a>", "</a>");
 			$cancion_sin_formato = str_replace($cadena_a_renombrar, "", $this->Song->data['Song']['song']);
 			$this->set('song', $cancion_sin_formato);
