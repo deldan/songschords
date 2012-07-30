@@ -25,6 +25,11 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
+	Router::connect(
+		'/:language/:controller/:action/*',
+        array(),
+        array('language' => '[a-z]{3}','id' => '[0-9]+','persist' => array('language'))
+    );
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
@@ -48,11 +53,7 @@
 	    array(),
 	    array('lang' => '[a-z]{3}','id' => '[0-9]+',  'persist' => array('lang'))
 	);*/
-	Router::connect(
-		'/:language/:controller/:action/*',
-        array(),
-        array('language' => '[a-z]{3}')
-    );
+	
 
 	/*Router::connect(
 	    '/:language/:controller/:action/*',

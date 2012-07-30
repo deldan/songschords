@@ -36,7 +36,7 @@
 		    <?php endforeach; ?>
 		</div>
 		<div id="comment">
-			<?php echo $this->Form->create('Comment', array('action' => 'addComment')); ?>
+			<?php echo $this->Form->create('Comment', array('action' => 'addComment', 'onsubmit'=>"return false;")); ?>
 			  <fieldset>
 			    <legend><?php echo __('Add Comment');?></legend>
 			    <div class="control-group">
