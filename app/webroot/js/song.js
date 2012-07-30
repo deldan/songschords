@@ -83,42 +83,60 @@ window.song = function () {
 			return( false );
 		});
 	}
-	// var SongsModel = Backbone.Model.extend({
-	//     initialize: function(){
-	//        console.log('Esta funcion se llamará en la creación de cada instancia')
-	//     },
-	//     defaults : {
-	// 	    "name" : "",
-	// 	    "song" : ""
-	// 	},
-	// 	urlRoot : "/backbones/view/1",
-	// 	parse : function(response) {
-	// 		if (response.SongsModel != undefined) {
-	// 		  	return response.SongsModel;
-	// 		}
-	// 			return response;
-	// 	}
-	// });
-	// var Songs = Backbone.Collection.extend({
-	// 	model : SongsModel,
-	// 	url : "/backbones"
-	// });
-	// // Crear instancia
- //    var songs = new SongsModel;
- //    songs.fetch({
-	// success : function(songs, response) {
-	// 	// 取得に成功した場合の処理
-	// 	console.log('ok');
-	// 	console.log(response);
-	// },
-	// error : function(songs, response) {
-	// 	// エラーが発生した場合の処理
-	// 	console.log('error');
-	// }
- //    });
+
+	var addComment = function () {
+		console.log('entra');
+		$('#CommentAddCommentForm').bind(
+			'submit', function(){
+				$.ajax({
+					async:true,
+					type:'post',
+					complete:function(request, json)
+					{$('#comments').html(request.responseText); },
+					data:$('#CommentAddCommentForm').serialize(),
+					url:'/comments/addComment'
+				})
+			}
+		);
+
+	}
+	/*var SongsModel = Backbone.Model.extend({
+	    initialize: function(){
+	       console.log('Esta funcion se llamará en la creación de cada instancia')
+	    },
+	    defaults : {
+		    "name" : "",
+		    "song" : ""
+		},
+		urlRoot : "/backbones/view/1",
+		parse : function(response) {
+			if (response.SongsModel != undefined) {
+			  	return response.SongsModel;
+			}
+				return response;
+		}
+	});
+	var Songs = Backbone.Collection.extend({
+		model : SongsModel,
+		url : "/backbones"
+	});
+	// Crear instancia
+    var songs = new SongsModel;
+    songs.fetch({
+	success : function(songs, response) {
+		// 取得に成功した場合の処理
+		console.log('ok');
+		console.log(response);
+	},
+	error : function(songs, response) {
+		// エラーが発生した場合の処理
+		console.log('error');
+	}
+    });*/
 
 	chordUpDown();
 	allChords();
 	favorite();
 	printSong();
+	addComment();
 };

@@ -18,11 +18,12 @@ class CommentsController extends AppController {
             $this->request->data['Comment']['user_id'] = $this->Auth->user('id');
                 if ($this->Comment->save($this->request->data)) {
                     $this->Session->setFlash('Your comment has been saved.');
-                    $this->redirect('/cancion/'.$this->request->data['Comment']['song_id']);
+                    //$this->redirect('/cancion/'.$this->request->data['Comment']['song_id']);
                 } else {
                     $this->Session->setFlash(__('The song could not be saved. Please, try again.'));
-                }   
-              
+                }
         }
+        $this->set('comments', $this->Comment->find('all', array('conditions' => array('song_id' => $this->request->data['Comment']['song_id']),'order' => array('Comment.id DESC'))));
+        $this->render('comments', 'ajax');
     }
 }

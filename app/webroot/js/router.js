@@ -9,8 +9,10 @@ window.SongsRouter = Backbone.Router.extend({
     "registro": "register",
     "song": "song",
     "song/:query": "song",
+    "cancion/view/": "song",
     "cancion": "song",
     "cancion/:query": "song",
+    "cancion/view/:query": "song",
     "songs/addSong": "addsong",
   },
 
@@ -28,7 +30,7 @@ window.SongsRouter = Backbone.Router.extend({
 
   register: function () {
   },
-  
+
   addsong: function () {
     addsong();
   }
