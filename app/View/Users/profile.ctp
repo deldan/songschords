@@ -30,7 +30,7 @@
 			</td>
 			<td><?php echo $song['Song']['created']; ?>&nbsp;</td>
 				<td class="actions">
-					<?php echo $this->element('actions',array('controller' => 'songs', 'view' => 'view', 'edit' => 'edit', 'delete' => 'delete', 'id' => $song['Song']['id'], 'messagedelete' => $song['Song']['title'], 'user_id' => $song['Song']['user_id'])); ?>
+					<?php echo $this->element('user_actions',array('controller' => 'songs', 'view' => 'view', 'edit' => 'edit', 'delete' => 'delete', 'id' => $song['Song']['id'], 'messagedelete' => $song['Song']['title'], 'user_id' => $song['Song']['user_id'])); ?>
 				</td>
 		</tr>
 		<?php endforeach; ?>

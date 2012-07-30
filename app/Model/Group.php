@@ -110,12 +110,13 @@ class Group extends AppModel {
  * Recoge los grupos a los que pertenece un usuario
  *
  * @param idUser Id del usuario
- * @return 
+ * @return
  */
 	public function groupsByUser( $idUser ) {
-		$query="SELECT groups.id, groups.name 
+		$query="SELECT groups.id, groups.name
 				FROM groups
-				INNER JOIN users_groups AS ug ON ug.user_id = groups.id
+				INNER JOIN users_groups AS ug
+				ON groups.id = ug.group_id
 				WHERE ug.user_id =".$idUser;
 		$results = $this->query($query);
 

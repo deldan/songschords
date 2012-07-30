@@ -20,13 +20,18 @@ public $uses = array('Group','UsersGroup');
 			$this->Group->create();
 			if ($this->Group->save($this->request->data)) {
 				$this->Session->setFlash(__('Grupo guardado'),'default', array(), 'success');
+				$groupid = $this->Group->getLastInsertID();
+				$userid  = $this->Auth->user('id');
+				$group['UsersGroup']['user_id']  = $this->Auth->user('id');
+				$group['UsersGroup']['group_id'] = $this->Group->getLastInsertID();
+				$this->UsersGroup->save($group);
 				$this->redirect("/groups/editGroup");
 			} else {
 				$this->Session->setFlash(__('No se ha podido guardar. Intentalo de nuevo'),'default', array(), 'error');
 			}
 		}
 		$users = $this->Group->User->find('list');
-		$this->set(compact('users'));
+		$this->set(compact('users','prueba'));
 	}
 
 /**
@@ -75,9 +80,21 @@ public $uses = array('Group','UsersGroup');
 		$this->set('group', $this->Group->read(null, $id));
 	}
 
-	public function editGroup($id = null) {
-		$this->Group->recursive = 0;
-		$this->set('groups', $this->paginate());
+	public function editGroup($userid = null) {
+		$istheuser = false;
+		if($userid == null){
+			$userid =$this->Auth->user('id');
+			$istheuser = true;
+		}
+
+		$usergroups = $this->Group->query(" SELECT * FROM `songs`.`groups`
+											INNER JOIN `songs`.`users_groups`
+											ON (groups.id = users_groups.group_id)
+											WHERE user_id =".$userid);
+
+		$this->set('groups', $this->paginate('Group'));
+		$this->set('istheuser', $istheuser);
+		$this->set(compact('usergroups'));
 	}
 
 /**
@@ -137,7 +154,7 @@ public $uses = array('Group','UsersGroup');
 				$group['UsersGroup']['group_id'] = $this->request->data['User']['groupid'];
 				$this->UsersGroup->save($group);
 				$this->Session->setFlash(__('Se ha añadido correctamente!'), 'default', array(),'success');
-			
+
 			} else {
 				$email = $this->request->data['User']['email'];
 				$this->User->set($this->request->data);
@@ -146,7 +163,7 @@ public $uses = array('Group','UsersGroup');
 					$this->Session->setFlash(__('Se ha mandado un correo al usuario'), 'default', array(),'success');
 				}else{
 					$this->Session->setFlash(__('No se ha podido mandar un correo'), 'default', array(),'error');
-				}	
+				}
 			}
 	  	}
 	  	$this->set('groupid',$groupId);

@@ -12,8 +12,6 @@
 	<fieldset>
 		<legend><?php echo __('Agregar concierto'); ?></legend>
 
-
-
 		<div class="input select">
 			<label for="ConcertGroupId">Id del grupo</label>
 			<select name="data[Concert][group_id]" id="ConcertGroupId">
@@ -22,12 +20,8 @@
 						echo '<option value="'.$group['groups']['id'].'">'.$group['groups']['name'].'</option>';
 					}
 				?>
-				
 			</select>
 		</div>
-
-
-
 	<?php
 		echo $this->Form->input('name', array('label' => __('Nombre del concierto')));
 		echo $this->Form->input('data', array('label' => __('Nombre del fecha')));

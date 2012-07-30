@@ -153,14 +153,11 @@ class SongsController extends AppController {
  */
 	public function edit($id = null) {
 		$this->Song->id = $id;
-
 		if (!$this->Song->exists()) {
 			throw new NotFoundException(__('Invalid song'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-
 				$this->request->data['Song']['song'] = $this->Chords->searchChords($this->request->data['Song']['song']);
-
 				if ($this->Song->save($this->request->data)) {
 				$this->Session->setFlash(__('The song has been saved'));
 				$this->redirect('/users/profile/');
@@ -173,7 +170,6 @@ class SongsController extends AppController {
 			$cancion_sin_formato = str_replace($cadena_a_renombrar, "", $this->Song->data['Song']['song']);
 			$this->set('song', $cancion_sin_formato);
 		}
-
 		$artists = $this->Song->Artist->find('list');
 		$users = $this->Song->User->find('list');
 		$concerts = $this->Song->Concert->find('list');
