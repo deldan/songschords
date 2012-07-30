@@ -32,13 +32,31 @@
 						<? endif;?>
 					</li>
 					<li>
-						<? echo $this->Html->link($this->Html->image("esp-flag.png"),
-						array('language'=>'esp'),
-						array('escape' => false) );?></li>
+						<? 
+						if(isset($this->params['pass'][0])){
+							echo $this->Html->link(
+								$this->Html->image("esp-flag.png"),
+								array('language'=>'esp', $this->params['pass'][0]),
+								array('escape' => false) );
+						}else{
+							echo $this->Html->link($this->Html->image("esp-flag.png"),
+							array('language'=>'esp'),
+							array('escape' => false) );
+						}
+						?></li>
 					<li>
-						<? echo $this->Html->link($this->Html->image("eng-flag.png"),
-						array('language'=>'eng'),
-						array('escape' => false) );?></li>
+						<? 
+						if(isset($this->params['pass'][0])){
+							echo $this->Html->link(
+								$this->Html->image("eng-flag.png"),
+								array('language'=>'eng', $this->params['pass'][0]),
+								array('escape' => false) );
+						}else{
+							echo $this->Html->link($this->Html->image("eng-flag.png"),
+							array('language'=>'eng'),
+							array('escape' => false) );
+						}
+						?></li>
 				</ul>
 				<form class="navbar-search pull-left" action="">
 		            <input type="text" class="search-query span2" placeholder=<?php echo __('Buscar');?> x-webkit-speech="">
