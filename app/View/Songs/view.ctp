@@ -13,6 +13,8 @@
 			<div id="jtab">
 			</div>
 		</div>
+
+		<?  if(!empty($comentarios)):?>
 		<section class="page-header">
 			<h1><?php echo __('Comentarios');?></h1>
 		</section>
@@ -35,6 +37,8 @@
 			</div>
 		    <?php endforeach; ?>
 		</div>
+		<?  endif ;?>
+
 		<?  if(isset($currentUserId)):?>
 			<div id="comment">
 				<?php echo $this->Form->create('Comment', array('action' => 'addComment', 'onsubmit'=>"return false;")); ?>
@@ -42,7 +46,7 @@
 				    <legend><?php echo __('Add Comment');?></legend>
 				    <div class="control-group">
 			            <div class="controls">
-			              <?php	echo $this->Form->input('body', array('label'=>__('Text'), 'rows' => '3'));?>
+			              <?php	echo $this->Form->input('body', array('label'=>__('Text'), 'style'=>'width:690px; height:50px;', 'rows' => '3'));?>
 			              <?php	echo $this->Form->input('song_id', array('value' => $song['Song']['id'], 'type' => 'hidden'));?>
 			            </div>
 			        </div>
@@ -52,6 +56,12 @@
 				  </fieldset>
 				</form>
 			</div>
+		<?  else :?>
+			Si quieres comentar, regístrate.
+			<BR>
+			<BR>
+			<BR>
+			<BR>
 		<?  endif ;?>
 	</div>
 </div>

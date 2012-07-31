@@ -1,10 +1,10 @@
-<div class="span11">
+<div class="span11 columns well">
 	<div class="columns center">
 		<?
 		echo $this->Form->create('Song', array(
-		'url' => array('controller' => 'songs', 'action' => 'searchSongTop'),
-        'class' => 'navbar-search pull-left'));?>
-        <input name="data[Song][search]" type="text" class="search-query span11" placeholder=<?php echo __('Buscar');?> x-webkit-speech="">
+									'url' => array('controller' => 'songs', 'action' => 'searchSongTop'),
+        								'class' => 'form-search pull-left'));?>
+        <input name="data[Song][search]" type="text" class="search-query span5" placeholder=<?php echo __('Buscar');?> x-webkit-speech="">
     	</form>
 	</div>
 </div>

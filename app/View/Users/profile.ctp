@@ -14,7 +14,6 @@
 	<table class="table table-condensed">
 		<thead>
 	    <tr>
-	      <th>#</th>
 	      <th><?php echo __('Título:');?></th>
 	      <th><?php echo __('Artista:');?></th>
 	      <th><?php echo __('Fecha de subida:');?></th>
@@ -23,7 +22,6 @@
 	  </thead>
 		<?php foreach ($songs as $song): ?>
 		<tr>
-			<td><?php echo h($song['Song']['id']); ?>&nbsp;</td>
 			<td><?php echo $this->Html->link($song['Song']['title'], array('controller' => 'songs', 'action' => 'view', $song['Song']['id'])); ?>
 			<td>
 				<?php echo $this->Html->link($song['Artist']['name'], array('controller' => 'artists', 'action' => 'view', $song['Artist']['id'])); ?>

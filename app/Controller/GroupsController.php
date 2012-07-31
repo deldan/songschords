@@ -76,7 +76,7 @@ public $uses = array('Group','UsersGroup');
 		if (!$this->Group->exists()) {
 			throw new NotFoundException(__('Invalid group'));
 		}
-		$this->Group->recursive = 1; 
+		$this->Group->recursive = 1;
 		$this->set('group', $this->Group->read(null, $id));
 	}
 

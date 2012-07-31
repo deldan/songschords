@@ -14,7 +14,6 @@
 	<div class="page-header">
 		<h2>Temas de <?php echo h($artist['Artist']['name']); ?>
 	</div>
-
 		<table class="table table-condensed">
 			<thead>
 		    <tr>
@@ -23,8 +22,6 @@
 		      <th>Acciones</th>
 		    </tr>
 		    </thead>
-
-
 		<?php if (!empty($artist['Song'])):?>
 		<?php
 			$i = 0;
