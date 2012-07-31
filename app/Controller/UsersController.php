@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('SongsController', 'SongsController');
 /**
  * Users Controller
  *
@@ -11,7 +12,7 @@ class UsersController extends AppController {
 
 	public function beforeFilter(){
 	    parent::beforeFilter();
-	    $allow = array('login' , 'register', 'resetUserPassword', 'profile');
+	    $allow = array('login' , 'register', 'resetUserPassword', 'profile', 'principal', 'searchSongTop');
 	    if(Configure::read('debug') > 0) {
 	      $allow[] = 'admin_register';
 	    }

@@ -13,6 +13,13 @@ class SongsController extends AppController {
 	public $components = array('Chords');
 	public $pdfConfig  = array('engine' => 'CakePdf.Tcpdf');
 
+	public function beforeFilter(){
+	    parent::beforeFilter();
+	    $allow = array('principal','searchSongTop','view');
+	    $this->Auth->allow($allow);
+	    $this->Auth->autoRedirect = false;
+	  }
+
 	public function principal() {
 		$this->paginate = array(
             'Song' => array(

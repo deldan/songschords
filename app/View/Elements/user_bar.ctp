@@ -1,3 +1,4 @@
+<?  if(isset($currentUserId)):?>
 <div class="span3 columns">
 	<div class="well">
 		<ul class="nav nav-list">
@@ -25,4 +26,5 @@
 			</li>
 		</ul>
 	</div>
-</div> 
+</div>
+<?  endif ;?>

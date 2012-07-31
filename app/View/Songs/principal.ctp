@@ -1,15 +1,15 @@
-<div class="span12">
+<div class="span11">
 	<div class="columns center">
 		<?
 		echo $this->Form->create('Song', array(
 		'url' => array('controller' => 'songs', 'action' => 'searchSongTop'),
         'class' => 'navbar-search pull-left'));?>
-        <input name="data[Song][search]" type="text" class="search-query span12" placeholder=<?php echo __('Buscar');?> x-webkit-speech="">
+        <input name="data[Song][search]" type="text" class="search-query span11" placeholder=<?php echo __('Buscar');?> x-webkit-speech="">
     	</form>
 	</div>
 </div>
 
-<div class="span12 columns well">
+<div class="span11 columns well">
 	<div class="page-header">
 		<h1><?php echo __('Últimas canciones añadidas:');?></h1>
 	</div>

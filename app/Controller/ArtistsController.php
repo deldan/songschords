@@ -7,6 +7,12 @@ App::uses('AppController', 'Controller');
  */
 class ArtistsController extends AppController {
 
+	public function beforeFilter(){
+	    parent::beforeFilter();
+	    $allow = array('view');
+	    $this->Auth->allow($allow);
+	    $this->Auth->autoRedirect = false;
+	}
 
 	public function searchArtist() {
 		Configure::write('debug', 0);

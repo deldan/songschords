@@ -6,8 +6,11 @@
   <?= $this->element('user_bar') ?>
 <? $this->end() ?>
 
-
+<?  if(!isset($currentUserId)):?>
+<div class="span11 columns well">
+<?  else:?>
 <div class="span8 columns well">
+<?  endif ;?>
 	<div class="page-header">
 		<h2>Temas de <?php echo h($artist['Artist']['name']); ?>
 	</div>

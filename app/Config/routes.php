@@ -30,7 +30,7 @@
         array(),
         array('language' => '[a-z]{3}','id' => '[0-9]+','persist' => array('language'))
     );
-	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+	Router::connect('/', array('controller' => 'songs', 'action' => 'principal')); //antes había una acción display, no sé si sirve
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
