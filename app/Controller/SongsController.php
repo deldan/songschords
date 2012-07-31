@@ -13,14 +13,20 @@ class SongsController extends AppController {
 	public $components = array('Chords');
 	public $pdfConfig  = array('engine' => 'CakePdf.Tcpdf');
 
+	public function principal() {
+		$this->paginate = array(
+            'Song' => array(
+              'limit' => 10,
+              'order' => 'Song.created DESC'
+        	)
+        );
+		$this->set('songs', $this->paginate('Song'));
+	}
 
 	public function searchSongTop() {
-
-
 		$search = $this->request->data['Song']['search'];
 		$results = $this->Song->find('all',array('conditions' => array( 'OR' => array('Song.title LIKE' => '%'.$search.'%', 'Song.song LIKE' => '%'.$search.'%'))));
 		$this->set('results', $results);
-
 	}
 
 	public function searchSong() {

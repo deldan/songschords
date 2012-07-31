@@ -87,12 +87,12 @@ class UsersController extends AppController {
 			$istheuser = true;
 		}
 		$this->paginate = array(
-                              'Song' => array(
-                              	'conditions' => array('user_id' => $userid),
-                                  'limit' => 10,
-                                  'order' => array('date' => 'desc')
-                                )
-                              );
+                              	'Song' => array(
+                              		'conditions' => array('user_id' => $userid),
+                                 	'limit' => 10,
+                                  	'order' => 'Song.created DESC'
+                               		)
+                                );
 		$this->set('songs', $this->paginate('Song'));
 		$this->set('istheuser', $istheuser);
 	}

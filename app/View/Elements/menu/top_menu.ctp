@@ -16,7 +16,7 @@
 			<div class="nav-collapse">
 				<ul class="nav">
 					<li <?php if($current_page=="songs"){echo'class="active"';} ?>>
-						<?php echo $this->Html->link(__('Canciones'), array('controller' => 'app', 'action' => 'songs')); ?>
+						<?php echo $this->Html->link(__('Canciones'), array('controller' => 'songs', 'action' => 'principal')); ?>
 					</li>
 					<? if(!$currentUser): ?>
 					<li <?php if($current_page=="registro"){echo'class="active"';} ?>>
