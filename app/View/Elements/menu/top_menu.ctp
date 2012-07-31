@@ -45,7 +45,7 @@
 						}
 						?></li>
 					<li>
-						<? 
+						<?
 						if(isset($this->params['pass'][0])){
 							echo $this->Html->link(
 								$this->Html->image("eng-flag.png"),
@@ -58,9 +58,14 @@
 						}
 						?></li>
 				</ul>
-				<form class="navbar-search pull-left" action="">
-		            <input type="text" class="search-query span2" placeholder=<?php echo __('Buscar');?> x-webkit-speech="">
+
+				<?  echo $this->Form->create('Song', array(
+					'url' => array('controller' => 'songs', 'action' => 'searchSongTop'),
+			        'class' => 'navbar-search pull-left')
+				);?>
+		            <input name="data[Song][search]" type="text" class="search-query span2" placeholder=<?php echo __('Buscar');?> x-webkit-speech="">
 		        </form>
+
 			</div>
 		</div>
 		<ul class="right">

@@ -11,8 +11,17 @@ App::uses('AppController', 'Controller');
 class SongsController extends AppController {
 
 	public $components = array('Chords');
-	public $pdfConfig = array('engine' => 'CakePdf.Tcpdf');
+	public $pdfConfig  = array('engine' => 'CakePdf.Tcpdf');
 
+
+	public function searchSongTop() {
+
+
+		$search = $this->request->data['Song']['search'];
+		$results = $this->Song->find('all',array('conditions' => array( 'OR' => array('Song.title LIKE' => '%'.$search.'%', 'Song.song LIKE' => '%'.$search.'%'))));
+		$this->set('results', $results);
+
+	}
 
 	public function searchSong() {
 		Configure::write('debug', 0);

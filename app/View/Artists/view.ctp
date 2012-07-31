@@ -30,7 +30,7 @@
 				<td><?php echo $this->Html->link($song['title'], array('controller' => 'songs', 'action' => 'view', $song['id'])); ?>
 				<td><?php echo $song['User']['username'];?></td>
 				<td class="actions">
-					<?php echo $this->element('actions',array('controller' => 'songs', 'view' => 'view', 'edit' => 'edit', 'delete' => 'delete', 'id' => $song['id'], 'messagedelete' => $song['title'], 'user_id' => $song['user_id'])); ?>
+					<?php echo $this->element('user_actions',array('controller' => 'songs', 'view' => 'view', 'edit' => 'edit', 'delete' => 'delete', 'id' => $song['id'], 'messagedelete' => $song['title'], 'user_id' => $song['user_id'])); ?>
 				</td>
 			</tr>
 			<?php endforeach; ?>
