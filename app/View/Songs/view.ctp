@@ -46,7 +46,7 @@
 				    <legend><?php echo __('Add Comment');?></legend>
 				    <div class="control-group">
 			            <div class="controls">
-			              <?php	echo $this->Form->input('body', array('label'=>__('Text'), 'style'=>'width:690px; height:50px;', 'rows' => '3'));?>
+			              <?php	echo $this->Form->input('body', array('label'=>false, 'style'=>'width:690px; height:50px;', 'rows' => '3'));?>
 			              <?php	echo $this->Form->input('song_id', array('value' => $song['Song']['id'], 'type' => 'hidden'));?>
 			            </div>
 			        </div>
