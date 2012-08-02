@@ -1,4 +1,4 @@
-app/Config/*
+
 app/tmp/cache/*
 app/tmp/logs/*
 app/tmp/sessions/*
