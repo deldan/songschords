@@ -4,7 +4,8 @@
 		echo $this->Form->create('Song', array(
 									'url' => array('controller' => 'songs', 'action' => 'searchSongTop'),
         								'class' => 'form-search pull-left'));?>
-        <input name="data[Song][search]" type="text" class="search-query span5" placeholder=<?php echo __('Buscar');?> x-webkit-speech="">
+        <input name="data[Song][search]" type="text" class="search-query span5" placeholder=<?php echo __('Song');?> x-webkit-speech="">
+        <button type="submit" class="btn btn-primary"><?php echo __('Buscar');?> </button>
     	</form>
 	</div>
 </div>

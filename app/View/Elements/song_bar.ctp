@@ -18,8 +18,14 @@
 				  <i class="icon-download"></i>
 				  <?php echo __('Descargar');?>
 				</a>
-				<a href="#" id="favorite">
-				  <i class="icon-star-empty"></i>
+				<a href="<?php echo $song['Song']['id'];?>" id="favorite">
+					<? $class="icon-star-empty";?>
+					<? foreach($song['SongFavorite'] as $favorite):?>
+						<? if($favorite['id'] == $currentUserId): ?>
+							<? $class="icon-star";?>
+						<? endif;?>
+					<? endforeach;?>
+				  <i class="<? echo $class;?>"></i>
 				  <?php echo __('Guardar como favorito');?>
 				</a>
 			</li>

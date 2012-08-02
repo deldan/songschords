@@ -44,7 +44,7 @@
 
 //extensión para CakePDF
 	Router::parseExtensions('pdf');
-	//Router::parseExtensions('json');
+	Router::parseExtensions('json');
 	//Router::mapResources('backbones');
 
 //Para localizacion

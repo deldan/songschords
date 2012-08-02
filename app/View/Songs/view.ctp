@@ -5,7 +5,6 @@
 <? $this->start('sidebar') ?>
   <?= $this->element('song_bar') ?>
 <? $this->end() ?>
-
 <div class="row">
 	<div class="span9 columns">
 		<div id="song">
@@ -37,13 +36,19 @@
 			</div>
 		    <?php endforeach; ?>
 		</div>
+		<? else:?>
+			<section class="page-header">
+				<h1><?php echo __('Comentarios');?></h1>
+			</section>
+			<div id="comments">
+			</div>
 		<?  endif ;?>
 
 		<?  if(isset($currentUserId)):?>
 			<div id="comment">
 				<?php echo $this->Form->create('Comment', array('action' => 'addComment', 'onsubmit'=>"return false;")); ?>
 				  <fieldset>
-				    <legend><?php echo __('Add Comment');?></legend>
+				    <legend><i class="icon-comment"></i><?php echo __('Add Comment');?></legend>
 				    <div class="control-group">
 			            <div class="controls">
 			              <?php	echo $this->Form->input('body', array('label'=>false, 'style'=>'width:690px; height:50px;', 'rows' => '3'));?>
@@ -58,10 +63,6 @@
 			</div>
 		<?  else :?>
 			Si quieres comentar, regístrate.
-			<BR>
-			<BR>
-			<BR>
-			<BR>
 		<?  endif ;?>
 	</div>
 </div>

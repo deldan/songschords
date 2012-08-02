@@ -105,6 +105,12 @@ class Song extends AppModel {
 			'finderQuery' => '',
 			'deleteQuery' => '',
 			'insertQuery' => ''
+		),
+		'SongFavorite' => array(
+			'className' => 'User',
+			'joinTable' => 'users_songs',
+			'foreignKey' => 'song_id',
+			'associationForeignKey' => 'user_id'
 		)
 	);
 

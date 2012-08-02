@@ -117,6 +117,21 @@ class User extends AppModel {
 			'finderQuery' => '',
 			'deleteQuery' => '',
 			'insertQuery' => ''
+		),
+		'SongFavorite' => array(
+			'className' => 'Song',
+			'joinTable' => 'users_songs',
+			'foreignKey' => 'user_id',
+			'associationForeignKey' => 'song_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
 		)
 	);
 

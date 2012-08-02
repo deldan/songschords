@@ -123,7 +123,7 @@ class SongsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		$this->Song->recursive = 2;
+		$this->Song->recursive = 1;
 		$this->Song->id = $id;
 		if (!$this->Song->exists()) {
 			throw new NotFoundException(__('Invalid song'));

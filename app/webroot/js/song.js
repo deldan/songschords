@@ -35,17 +35,39 @@ window.song = function () {
 
 	var favorite = function () {
 		$('#favorite').on('click', function (e) {
+			var id = $('#favorite').attr('href');
+			console.log(id);
 			e.preventDefault();
-			if ($(this).children('i').hasClass('icon-star-empty')) {
+			var email = $("#UserEmail").val();
+		      $.ajax({
+		        type    : 'POST',
+		        dataType: "json",
+		        data  : { Song: { id: id } },
+		        cache : false,
+		        url   : "/users/addfavorite",
+		        success: function(data) {
+		          console.log(data.favorite);
+		          if(data.favorite == true){
+		          	$('#favorite').children('i').removeClass('icon-star-empty');
+    				$('#favorite').children('i').addClass('icon-star');
+		          }else{
+		          	$('#favorite').children('i').removeClass('icon-star');
+    				$('#favorite').children('i').addClass('icon-star-empty');
+		          }
+		        }
+		      });
+		    });
+
+
+			/*if ($(this).children('i').hasClass('icon-star-empty')) {
     			$('#favorite').children('i').removeClass('icon-star-empty');
     			$('#favorite').children('i').addClass('icon-star');
 		  	} else {
 		    	$('#favorite').children('i').removeClass('icon-star');
     			$('#favorite').children('i').addClass('icon-star-empty');
-		  	}
+		  	}*/
 
 			//$(this).children('i').toggleClass('icon-star-empty');
-		});
 	}
 
 	var allChords = function () {

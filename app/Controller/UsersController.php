@@ -9,6 +9,7 @@ App::uses('SongsController', 'SongsController');
 class UsersController extends AppController {
 
 	public $components = array('Password','Email');
+	public $uses = array('User','UsersSong');
 
 	public function beforeFilter(){
 	    parent::beforeFilter();
@@ -97,6 +98,32 @@ class UsersController extends AppController {
 		$this->set('songs', $this->paginate('Song'));
 		$this->set('istheuser', $istheuser);
 	}
+
+	public function addfavorite() {
+		$favorite['UsersSong']['user_id'] = $this->Auth->user('id');
+		$favorite['UsersSong']['song_id'] = $this->request->data['Song']['id'];
+		$favorites =$this->UsersSong->find('first', array('conditions' => array('UsersSong.user_id' => $favorite['UsersSong']['user_id'], 'UsersSong.song_id' => $favorite['UsersSong']['song_id'])));
+		if(!empty($favorites)){
+			$this->UsersSong->id = $favorites['UsersSong']['id'];
+			$this->UsersSong->delete();
+			$this->set('favorite', false);
+		}else{
+			$this->UsersSong->create();
+			$this->UsersSong->save($favorite);
+			$this->set('favorite', true);
+		}
+
+		$this->set('_serialize', array('favorite'));
+	}
+
+	public function favorites() {
+		$userid = $this->Auth->user('id');
+		$user = $this->User->find('first' , array('conditions' => array('User.id' => $userid)));
+		$this->set('istheuser', true);
+		$this->set('songs', $user['SongFavorite']);
+	}
+
+
 /**
  * index method
  *
