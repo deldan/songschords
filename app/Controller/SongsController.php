@@ -10,8 +10,7 @@ App::uses('AppController', 'Controller');
 
 class SongsController extends AppController {
 
-	public $helpers = array('Session');
-	public $components = array('Chords','Session');
+	public $components = array('Chords');
 	public $pdfConfig  = array('engine' => 'CakePdf.Tcpdf');
 
 	public function beforeFilter(){
