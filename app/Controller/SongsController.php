@@ -10,7 +10,8 @@ App::uses('AppController', 'Controller');
 
 class SongsController extends AppController {
 
-	public $components = array('Chords');
+	public $helpers = array('Session');
+	public $components = array('Chords','Session');
 	public $pdfConfig  = array('engine' => 'CakePdf.Tcpdf');
 
 	public function beforeFilter(){
@@ -174,28 +175,38 @@ class SongsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+
 		$this->Song->id = $id;
-		if (!$this->Song->exists()) {
-			throw new NotFoundException(__('Invalid song'));
-		}
-		if ($this->request->is('post') || $this->request->is('put')) {
-				$this->request->data['Song']['song'] = $this->Chords->searchChords($this->request->data['Song']['song']);
-				if ($this->Song->save($this->request->data)) {
-				$this->Session->setFlash(__('The song has been saved'));
-				$this->redirect('/users/profile/');
-			} else {
-				$this->Session->setFlash(__('The song could not be saved. Please, try again.'));
+
+		$this->request->data = $this->Song->read(null, $id);
+		$user_id = $this->request->data['Song']['user_id'];
+		$currentUserId = $this->Auth->user('id');
+
+		if($currentUserId === $user_id) {
+			if (!$this->Song->exists()) {
+				throw new NotFoundException(__('Invalid song'));
 			}
+			if ($this->request->is('post') || $this->request->is('put')) {
+					$this->request->data['Song']['song'] = $this->Chords->searchChords($this->request->data['Song']['song']);
+					if ($this->Song->save($this->request->data)) {
+					$this->Session->setFlash(__('The song has been saved'));
+					$this->redirect('/users/profile/');
+				} else {
+					$this->Session->setFlash(__('The song could not be saved. Please, try again.'));
+				}
+			} else {
+				$cadena_a_renombrar = array("<a>", "</a>");
+				$cancion_sin_formato = str_replace($cadena_a_renombrar, "", $this->Song->data['Song']['song']);
+				$this->set('song', $cancion_sin_formato);
+			}
+			$artists = $this->Song->Artist->find('list');
+			$users = $this->Song->User->find('list');
+			$concerts = $this->Song->Concert->find('list');
+			$this->set(compact('artists', 'users', 'concerts', 'id', 'user_id'));
 		} else {
-			$this->request->data = $this->Song->read(null, $id);
-			$cadena_a_renombrar = array("<a>", "</a>");
-			$cancion_sin_formato = str_replace($cadena_a_renombrar, "", $this->Song->data['Song']['song']);
-			$this->set('song', $cancion_sin_formato);
+			$this->Session->setFlash('La canción no te pertenece','default', array(), 'error');
+			$this->redirect('/users/profile/');
 		}
-		$artists = $this->Song->Artist->find('list');
-		$users = $this->Song->User->find('list');
-		$concerts = $this->Song->Concert->find('list');
-		$this->set(compact('artists', 'users', 'concerts'));
 	}
 
 /**
