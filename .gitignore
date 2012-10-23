@@ -11,3 +11,4 @@ ehthumbs.db
 Icon?
 Thumbs.db
 lib/Cake/Console/Templates/skel/tmp/*
+app/Config/database.php
